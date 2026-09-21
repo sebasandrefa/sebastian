@@ -1,10 +1,10 @@
 <?php
-$usuario = "";
-$senha = "";
+$nome = "";
+$idade = "";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $usuario = $_POST["usuario"];
-    $senha = $_POST["senha"];
+    $nome = $_POST["nome"];
+    $idade = $_POST["idade"];
 }
 ?>
 
@@ -13,22 +13,21 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
+    <title>Cadastro do aluno</title>
     <link rel="stylesheet" href="index.css">
 </head>
 <body>
-    <h1>Login</h1>
+    <h1>Cadastro do aluno</h1>
 
     <form method="POST">
-        <input type="text" name="usuario" placeholder="Usuário" required>
-        <input type="password" name="senha" placeholder="Senha" required>
+        <input type="text" name="nome" placeholder="Digite seu nome" required>
+        <input type="number" name="idade" placeholder="Digite sua idade" required>
         <button type="submit">Entrar</button>
     </form>
 
-    <?php if ($usuario == "aluno" && $senha == "123") { ?>
-        <a href="idade.php">Idade</a>
-        <a href="notas.php">Notas</a>
-        <a href="notas-desafio.php">Desafio notas</a>
+    <?php if ($nome != "") { ?>
+        <h2>Olá, <?= $nome ?>!</h2>
+        <p>Idade: <?= $idade ?> anos</p>
     <?php } ?>
 
 </body>
