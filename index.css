@@ -1,3 +1,63 @@
+* {
+    box-sizing: border-box;
+}
+
 body {
+    margin: 0;
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+    font-family: Arial, sans-serif;
+    background: #f4f4f4;
+}
+
+.caixa {
+    width: min(360px, 90%);
+    padding: 32px;
     text-align: center;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 16px #0002;
+}
+
+h1 {
+    margin-top: 0;
+}
+
+form, a {
+    display: grid;
+    gap: 12px;
+}
+
+input, button, a {
+    padding: 12px;
+    border-radius: 6px;
+    font-size: 16px;
+}
+
+input {
+    border: 1px solid #ccc;
+}
+
+button, a {
+    border: 0;
+    background: #2563eb;
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.sair {
+    margin-top: 12px;
+    background: #555;
+}
+
+.erro {
+    color: #c00;
+}
+
+small {
+    display: block;
+    margin-top: 18px;
+    color: #666;
 }
