@@ -25,8 +25,5 @@
     }
     ?>
 
-    <a href="idade.php">Verificador de idade</a>
-    <br>
-    <a href="notas.php">Verificador de notas</a>
 </body>
 </html>
