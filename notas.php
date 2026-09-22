@@ -11,7 +11,7 @@ $resultado = "";
 $erro = "";
 
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
+if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["nome"])) {
     $nome = $_POST["nome"];
     $idade = $_POST["idade"];
     $nota1 = $_POST["nota1"];
