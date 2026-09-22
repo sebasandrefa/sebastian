@@ -34,13 +34,14 @@ if ($_SERVER ["REQUEST_METHOD"] == "POST"){
 
 <form method="POST" class="formulario-notas">
 
-    <input type="text" id="nome" name="nome" placeholder="Digite seu Nome">
+    <input type="text" id="nome" name="nome" placeholder="Digite seu Nome" required>
 
-    <input type="number" id="idade"  name="idade" placeholder="Digite sua idade">
+    <input type="number" id="idade"  name="idade" placeholder="Digite sua idade" required>
 
     <input type="submit" value="Enviar">
     </form>
 
+    <?php if ($nome != "") { ?>
     <div class="card">
 
         
@@ -60,6 +61,7 @@ if ($_SERVER ["REQUEST_METHOD"] == "POST"){
         <p>De acordo com a idade, eu sou <?= $mostrar ?></p>
 
     </div>
+    <?php } ?>
         
     </body>
     </html>
