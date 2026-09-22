@@ -29,10 +29,10 @@ if ($_SERVER ["REQUEST_METHOD"] == "POST"){
     
     <title>project</title>
 </head>
-<body>
+<body class="pagina-notas">
 
 
-<form method="POST">
+<form method="POST" class="formulario-notas">
 
     <input type="text" id="nome" name="nome" placeholder="Digite seu Nome">
 
