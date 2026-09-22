@@ -48,14 +48,14 @@ a {
 .formulario-notas button,
 .formulario-notas input[type="submit"] {
     border: none;
-    background-color: #2563eb;
+    background-color: black;
     color: white;
     cursor: pointer;
 }
 
 .formulario-notas button:hover,
 .formulario-notas input[type="submit"]:hover {
-    background-color: #1d4ed8;
+    background-color: #333333;
 }
 
 .pagina-notas .card {
