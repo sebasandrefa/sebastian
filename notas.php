@@ -45,12 +45,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["nome"])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
     <title>Notas</title>
 </head>
-<body>
+<body class="pagina-notas">
     <h1>Cadastro de aluno</h1>
 
-    <form method="POST">
+    <form method="POST" class="formulario-notas">
         <input type="text" name="nome" placeholder="Digite seu nome" required>
         <br><br>
         <input type="number" name="idade" placeholder="Digite sua idade" required>

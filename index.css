@@ -7,3 +7,28 @@ a {
     display: block;
     margin: 10px;
 }
+
+.pagina-notas {
+    min-height: 100vh;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.formulario-notas {
+    width: 280px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.formulario-notas br {
+    display: none;
+}
+
+.formulario-notas input,
+.formulario-notas button {
+    padding: 10px;
+}
