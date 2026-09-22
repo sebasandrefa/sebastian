@@ -11,17 +11,26 @@ a {
 .pagina-notas {
     min-height: 100vh;
     margin: 0;
+    padding: 32px 16px;
+    box-sizing: border-box;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    background-color: #f3f6fb;
+    color: #1f2937;
 }
 
 .formulario-notas {
     width: 280px;
+    padding: 24px;
+    box-sizing: border-box;
     display: flex;
     flex-direction: column;
     gap: 12px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px #0000001a;
 }
 
 .formulario-notas br {
@@ -31,12 +40,33 @@ a {
 .formulario-notas input,
 .formulario-notas button {
     padding: 10px;
+    border: 1px solid #cbd5e1;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.formulario-notas button,
+.formulario-notas input[type="submit"] {
+    border: none;
+    background-color: #2563eb;
+    color: white;
+    cursor: pointer;
+}
+
+.formulario-notas button:hover,
+.formulario-notas input[type="submit"]:hover {
+    background-color: #1d4ed8;
 }
 
 .pagina-notas .card {
     width: 100%;
     max-width: 500px;
     margin-top: 20px;
+    padding: 20px;
+    box-sizing: border-box;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px #0000001a;
 }
 
 .pagina-notas .card h1 {
@@ -58,9 +88,10 @@ a {
     width: 280px;
     margin-top: 20px;
     padding: 20px;
-    border: 1px solid #cccccc;
-    border-radius: 8px;
-    background-color: #f8f8f8;
+    box-sizing: border-box;
+    border-radius: 10px;
+    background-color: white;
+    box-shadow: 0 4px 12px #0000001a;
 }
 
 .situacao {
