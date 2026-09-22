@@ -9,6 +9,7 @@ $nota5 = "";
 $media = "";
 $resultado = "";
 $erro = "";
+$pontosFaltam = "";
 
 
 if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET["nome"])) {
@@ -28,12 +29,18 @@ if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET["nome"])) {
     } else {
         $media = ($nota1 * 2 + $nota2 * 3 + $nota3 + $nota4 + $nota5 * 3) / 10;
 
-        if ($media >= 7) {
+        if ($media == 10) {
+            $resultado = "APROVADO COM EXCELÊNCIA";
+        } elseif ($media >= 7) {
             $resultado = "APROVADO";
         } elseif ($media >= 5) {
             $resultado = "RECUPERAÇÃO";
         } else {
             $resultado = "REPROVADO";
+        }
+
+        if ($media < 7) {
+            $pontosFaltam = 7 - $media;
         }
     }
 }
@@ -79,6 +86,9 @@ if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET["nome"])) {
         <p>Idade: <?= $idade ?> anos</p>
         <p>Média: <?= number_format($media, 2, ",", ".") ?></p>
         <p>Situação: <?= $resultado ?></p>
+        <?php if ($pontosFaltam != "") { ?>
+            <p>Faltaram <?= number_format($pontosFaltam, 1, ",", ".") ?> pontos para atingir a média 7.</p>
+        <?php } ?>
     <?php } ?>
 </body>
 </html>
