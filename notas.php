@@ -10,6 +10,7 @@ $media = "";
 $resultado = "";
 $erro = "";
 
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $nome = $_POST["nome"];
     $idade = $_POST["idade"];
@@ -19,10 +20,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $nota4 = $_POST["nota4"];
     $nota5 = $_POST["nota5"];
 
-    if ($idade <= 0) {
-        $erro = "A idade deve ser maior que zero.";
-    } elseif ($nota1 < 0 || $nota1 > 10 || $nota2 < 0 || $nota2 > 10 || $nota3 < 0 || $nota3 > 10 || $nota4 < 0 || $nota4 > 10 || $nota5 < 0 || $nota5 > 10) {
+
+    if ($nota1 < 0 || $nota1 > 10 || $nota2 < 0 || $nota2 > 10 || $nota3 < 0 || $nota3 > 10 || $nota4 < 0 || $nota4 > 10 || $nota5 < 0 || $nota5 > 10) {
         $erro = "As notas devem estar entre 0 e 10.";
+    } elseif ($idade <= 0) {
+        $erro = "A idade deve ser maior que zero.";
     } else {
         $media = ($nota1 * 2 + $nota2 * 3 + $nota3 + $nota4 + $nota5 * 3) / 10;
 
@@ -37,6 +39,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 ?>
 
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -50,17 +53,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <form method="POST">
         <input type="text" name="nome" placeholder="Digite seu nome" required>
         <br><br>
-        <input type="number" name="idade" placeholder="Digite sua idade" min="1" required>
+        <input type="number" name="idade" placeholder="Digite sua idade" required>
         <br><br>
-        <input type="number" name="nota1" placeholder="Nota 1" min="0" max="10" step="0.1" required>
+        <input type="number" name="nota1" placeholder="Nota 1" step="0.1" required>
         <br><br>
-        <input type="number" name="nota2" placeholder="Nota 2" min="0" max="10" step="0.1" required>
+        <input type="number" name="nota2" placeholder="Nota 2" step="0.1" required>
         <br><br>
-        <input type="number" name="nota3" placeholder="Nota 3" min="0" max="10" step="0.1" required>
+        <input type="number" name="nota3" placeholder="Nota 3" step="0.1" required>
         <br><br>
-        <input type="number" name="nota4" placeholder="Nota 4" min="0" max="10" step="0.1" required>
+        <input type="number" name="nota4" placeholder="Nota 4" step="0.1" required>
         <br><br>
-        <input type="number" name="nota5" placeholder="Nota 5" min="0" max="10" step="0.1" required>
+        <input type="number" name="nota5" placeholder="Nota 5" step="0.1" required>
         <br><br>
         <button type="submit">Calcular</button>
     </form>

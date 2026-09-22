@@ -8,8 +8,10 @@ $nota4 = "";
 $nota5 = "";
 $media = "";
 $resultado = "";
+$erro = "";
 
-if ($_SERVER["REQUEST_METHOD"] == "GET") {
+
+if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET["nome"])) {
     $nome = $_GET["nome"];
     $idade = $_GET["idade"];
     $nota1 = $_GET["nota1"];
@@ -18,17 +20,25 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
     $nota4 = $_GET["nota4"];
     $nota5 = $_GET["nota5"];
 
-    $media = ($nota1 * 2 + $nota2 * 3 + $nota3 + $nota4 + $nota5 * 3) / 10;
 
-    if ($media >= 7) {
-        $resultado = "APROVADO";
-    } elseif ($media >= 5) {
-        $resultado = "RECUPERAÇÃO";
+    if ($nota1 < 0 || $nota1 > 10 || $nota2 < 0 || $nota2 > 10 || $nota3 < 0 || $nota3 > 10 || $nota4 < 0 || $nota4 > 10 || $nota5 < 0 || $nota5 > 10) {
+        $erro = "As notas devem estar entre 0 e 10.";
+    } elseif ($idade <= 0) {
+        $erro = "A idade deve ser maior que zero.";
     } else {
-        $resultado = "REPROVADO";
+        $media = ($nota1 * 2 + $nota2 * 3 + $nota3 + $nota4 + $nota5 * 3) / 10;
+
+        if ($media >= 7) {
+            $resultado = "APROVADO";
+        } elseif ($media >= 5) {
+            $resultado = "RECUPERAÇÃO";
+        } else {
+            $resultado = "REPROVADO";
+        }
     }
 }
 ?>
+
 
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -40,7 +50,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
 <body>
     <h1>Cadastro de aluno</h1>
 
-    <form method="POST">
+    <form method="GET">
         <input type="text" name="nome" placeholder="Digite seu nome" required>
         <br><br>
         <input type="number" name="idade" placeholder="Digite sua idade" required>
@@ -57,6 +67,10 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
         <br><br>
         <button type="submit">Calcular</button>
     </form>
+
+    <?php if ($erro != "") { ?>
+        <p><?= $erro ?></p>
+    <?php } ?>
 
     <?php if ($resultado != "") { ?>
         <h2>Resultado</h2>
