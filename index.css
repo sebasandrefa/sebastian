@@ -32,3 +32,24 @@ a {
 .formulario-notas button {
     padding: 10px;
 }
+
+.pagina-notas .card {
+    width: 100%;
+    max-width: 500px;
+    margin-top: 20px;
+}
+
+.pagina-notas .card h1 {
+    font-size: 24px;
+    margin: 16px 0;
+}
+
+.pagina-notas .card h2 {
+    font-size: 20px;
+    margin: 12px 0;
+}
+
+.pagina-notas .card p {
+    font-size: 16px;
+    margin: 12px 0;
+}
