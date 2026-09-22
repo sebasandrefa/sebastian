@@ -53,3 +53,33 @@ a {
     font-size: 16px;
     margin: 12px 0;
 }
+
+.card-resultado {
+    width: 280px;
+    margin-top: 20px;
+    padding: 20px;
+    border: 1px solid #cccccc;
+    border-radius: 8px;
+    background-color: #f8f8f8;
+}
+
+.situacao {
+    padding: 10px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.aprovado {
+    background-color: #d9f7df;
+    color: #187a2f;
+}
+
+.recuperacao {
+    background-color: #fff3cd;
+    color: #8a6500;
+}
+
+.reprovado {
+    background-color: #f8d7da;
+    color: #a51d2d;
+}

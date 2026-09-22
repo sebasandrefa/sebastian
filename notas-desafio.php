@@ -10,6 +10,7 @@ $media = "";
 $resultado = "";
 $erro = "";
 $pontosFaltam = "";
+$classeResultado = "";
 
 
 if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET["nome"])) {
@@ -31,12 +32,16 @@ if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET["nome"])) {
 
         if ($media == 10) {
             $resultado = "APROVADO COM EXCELÊNCIA";
+            $classeResultado = "aprovado";
         } elseif ($media >= 7) {
             $resultado = "APROVADO";
+            $classeResultado = "aprovado";
         } elseif ($media >= 5) {
             $resultado = "RECUPERAÇÃO";
+            $classeResultado = "recuperacao";
         } else {
             $resultado = "REPROVADO";
+            $classeResultado = "reprovado";
         }
 
         if ($media < 7) {
@@ -81,14 +86,16 @@ if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET["nome"])) {
     <?php } ?>
 
     <?php if ($resultado != "") { ?>
-        <h2>Resultado</h2>
-        <p>Nome: <?= $nome ?></p>
-        <p>Idade: <?= $idade ?> anos</p>
-        <p>Média: <?= number_format($media, 2, ",", ".") ?></p>
-        <p>Situação: <?= $resultado ?></p>
-        <?php if ($pontosFaltam != "") { ?>
-            <p>Faltaram <?= number_format($pontosFaltam, 1, ",", ".") ?> pontos para atingir a média 7.</p>
-        <?php } ?>
+        <div class="card-resultado">
+            <h2>Resultado</h2>
+            <p>Nome: <?= $nome ?></p>
+            <p>Idade: <?= $idade ?> anos</p>
+            <p>Média: <?= number_format($media, 2, ",", ".") ?></p>
+            <p class="situacao <?= $classeResultado ?>">Situação: <?= $resultado ?></p>
+            <?php if ($pontosFaltam != "") { ?>
+                <p>Faltaram <?= number_format($pontosFaltam, 1, ",", ".") ?> pontos para atingir a média 7.</p>
+            <?php } ?>
+        </div>
     <?php } ?>
 </body>
 </html>
