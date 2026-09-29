@@ -3,7 +3,7 @@
 
 $host = "localhost";
 $banco = "sebastian315";
-$usuario = "sebas315";
+$usuario = "sebastian315";
 $senha = "315!@#";
 
 try{
