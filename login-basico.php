@@ -1,5 +1,5 @@
 <?php
-$usuarioCorreto = "aluno";
+$usuarioCorreto = "sebas";
 $senhaCorreta = "1234";
 $mensagem = "";
 
