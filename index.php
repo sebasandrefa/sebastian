@@ -3,10 +3,10 @@
     echo "Meu sistema está conectado!";
 
 
-    $sql = "CRETE TABLE IF NOT EXISTS teste (
-    id INT AUTO_INCREMENT PRIMaRY KEY, 
-    nome VARCHAR (100), 
-    idade INT
+    $sql = "CREATE TABLE IF NOT EXISTS teste (
+    id INT AUTO_INCREMENT PRIMARY KEY, 
+    nome VARCHAR (100) NOT NULL, 
+    idade INT NOT NULL
     )";
 
     $pdo->exec($sql);
