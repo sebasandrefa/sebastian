@@ -1,13 +1,13 @@
-<?php
+<?php 
 
 
 $host = "localhost";
-$banco = "sebas315";
+$banco = "sebastian315";
 $usuario = "sebas315";
 $senha = "315!@#";
 
 try{
-
+    
     $pdo = new PDO ("mysql:host=$host;dbname=$banco; charset=utf8mb4", $usuario, $senha);
 
     $pdo->setAttribute(
