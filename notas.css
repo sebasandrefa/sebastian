@@ -6,8 +6,8 @@ body {
     margin: 0;
     font-family: Arial, sans-serif;
     text-align: center;
-    color: #1f2937;
-    background: #f3f6fb;
+    color: #222;
+    background: #f5f5f5;
 }
 
 .pagina-notas {
@@ -20,7 +20,7 @@ body {
 }
 
 .pagina-notas h1 {
-    color: #172554;
+    color: #111;
 }
 
 .formulario-notas {
@@ -29,10 +29,10 @@ body {
     display: flex;
     flex-direction: column;
     gap: 12px;
-    border: 1px solid #e2e8f0;
+    border: 1px solid #ddd;
     border-radius: 12px;
     background: white;
-    box-shadow: 0 8px 24px #0f172a12;
+    box-shadow: 0 6px 18px #00000012;
 }
 
 .formulario-notas br {
@@ -43,7 +43,7 @@ body {
 .formulario-notas button {
     width: 100%;
     padding: 11px 12px;
-    border: 1px solid #cbd5e1;
+    border: 1px solid #ccc;
     border-radius: 7px;
     font: inherit;
 }
@@ -51,24 +51,24 @@ body {
 .formulario-notas button,
 .formulario-notas input[type="submit"] {
     border: 0;
-    background: #1d4ed8;
+    background: #222;
     color: white;
     cursor: pointer;
 }
 
 .formulario-notas button:hover,
 .formulario-notas input[type="submit"]:hover {
-    background: #1e40af;
+    background: #444;
 }
 
 .card-resultado {
     width: min(100%, 420px);
     margin-top: 20px;
     padding: 20px;
-    border: 1px solid #e2e8f0;
+    border: 1px solid #ddd;
     border-radius: 12px;
     background: white;
-    box-shadow: 0 8px 24px #0f172a12;
+    box-shadow: 0 6px 18px #00000012;
 }
 
 .situacao {
@@ -77,10 +77,12 @@ body {
     font-weight: bold;
 }
 
-.aprovado { background: #dcfce7; color: #166534; }
-.recuperacao { background: #fef3c7; color: #92400e; }
-.reprovado { background: #fee2e2; color: #991b1b; }
+.aprovado { background: #eee; color: #222; }
+.recuperacao { background: #ddd; color: #222; }
+.reprovado { background: #ccc; color: #111; }
 
 .pagina-notas a {
     margin: 8px;
 }
+
+.pagina-notas a { color: #333; }

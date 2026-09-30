@@ -5,13 +5,13 @@
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    color: #1f2937;
+    color: #222;
     text-align: center;
-    background: #f3f6fb;
+    background: #f5f5f5;
 }
 
 a {
-    color: #1d4ed8;
+    color: #333;
 }
 
 .pagina-inicio,
@@ -26,7 +26,7 @@ a {
 
 .status-inicio {
     margin-bottom: 16px;
-    color: #475569;
+    color: #555;
     font-size: 14px;
 }
 
@@ -41,31 +41,31 @@ a {
 .caixa-login {
     width: min(100%, 360px);
     padding: 28px;
-    border: 1px solid #e2e8f0;
+    border: 1px solid #ddd;
     border-radius: 12px;
     background: white;
-    box-shadow: 0 8px 24px #0f172a12;
+    box-shadow: 0 6px 18px #00000012;
 }
 
 .inicio h1,
 .caixa-login h1,
 .pagina-jogos h1 {
     margin-top: 0;
-    color: #172554;
+    color: #111;
 }
 
 .menu-inicio a {
     display: block;
     margin: 8px 0;
     padding: 12px;
-    border: 1px solid #e2e8f0;
+    border: 1px solid #ddd;
     border-radius: 8px;
-    background: #f8fafc;
+    background: #f7f7f7;
     text-decoration: none;
 }
 
 .menu-inicio a:hover {
-    background: #eff6ff;
+    background: #eaeaea;
 }
 
 .pagina-jogos {
@@ -82,7 +82,7 @@ a {
     display: flex;
     flex-direction: column;
     gap: 12px;
-    border: 1px solid #e2e8f0;
+    border: 1px solid #ddd;
     border-radius: 12px;
     background: white;
     box-shadow: 0 8px 24px #0f172a12;
@@ -94,7 +94,7 @@ a {
 .caixa-login button {
     width: 100%;
     padding: 11px 12px;
-    border: 1px solid #cbd5e1;
+    border: 1px solid #ccc;
     border-radius: 7px;
     font: inherit;
 }
@@ -102,21 +102,21 @@ a {
 .formulario-jogos button,
 .caixa-login button {
     border: 0;
-    background: #1d4ed8;
+    background: #222;
     color: white;
     cursor: pointer;
 }
 
 .formulario-jogos button:hover,
 .caixa-login button:hover {
-    background: #1e40af;
+    background: #444;
 }
 
 .lista-jogos {
     width: min(100%, 900px);
     margin-top: 28px;
     padding: 20px;
-    border: 1px solid #e2e8f0;
+    border: 1px solid #ddd;
     border-radius: 12px;
     background: white;
     box-shadow: 0 8px 24px #0f172a12;
@@ -135,11 +135,11 @@ a {
 .lista-jogos th,
 .lista-jogos td {
     padding: 12px;
-    border-bottom: 1px solid #e2e8f0;
+    border-bottom: 1px solid #ddd;
 }
 
 .lista-jogos th {
-    background: #f8fafc;
+    background: #f1f1f1;
 }
 
 .lista-jogos tbody tr:last-child td {
