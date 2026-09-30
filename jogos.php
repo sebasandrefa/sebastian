@@ -14,6 +14,11 @@ try {
         ano_lancamento INT
     )");
 
+     $colunas = $pdo->query("SHOW COLUMNS FROM jogos")->fetchAll(PDO::FETCH_COLUMN);
+    if (!in_array("ano_lancamento", $colunas, true)) {
+        $pdo->exec("ALTER TABLE jogos ADD COLUMN ano_lancamento INT NULL");
+    }
+
     if ($_SERVER["REQUEST_METHOD"] === "POST") {
         $sql = "INSERT INTO jogos (nome, genero, nota, ano_lancamento)
                 VALUES (?, ?, ?, ?)";
