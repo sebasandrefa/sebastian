@@ -1,0 +1,63 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: #222;
+    background: #f5f5f5;
+}
+
+.pagina-login-jogos {
+    min-height: 100vh;
+    padding: 24px 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.caixa-login-jogos {
+    width: min(100%, 320px);
+    padding: 24px;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    background: white;
+    box-shadow: 0 6px 18px #00000012;
+    text-align: center;
+}
+
+.caixa-login-jogos h1 {
+    margin-top: 0;
+    color: #111;
+}
+
+.caixa-login-jogos label {
+    display: block;
+    margin: 12px 0 6px;
+}
+
+.caixa-login-jogos input,
+.caixa-login-jogos button {
+    width: 100%;
+    padding: 11px 12px;
+    border: 1px solid #ccc;
+    border-radius: 7px;
+    font: inherit;
+}
+
+.caixa-login-jogos button {
+    margin-top: 12px;
+    border: 0;
+    background: #222;
+    color: white;
+    cursor: pointer;
+}
+
+.caixa-login-jogos button:hover {
+    background: #444;
+}
+
+.caixa-login-jogos a {
+    color: #333;
+}

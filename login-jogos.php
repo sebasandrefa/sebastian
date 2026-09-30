@@ -10,6 +10,8 @@ if (isset($_GET["sair"])) {
 
 unset($_SESSION["jogos_logado"]);
 
+$erro = "";
+
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $usuario = $_POST["usuario"] ?? "";
     $senha = $_POST["senha"] ?? "";
@@ -21,8 +23,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         exit;
     }
 
-    header("Location: index.php");
-    exit;
+    $erro = "Usuário ou senha incorretos.";
 }
 ?>
 <!DOCTYPE html>
@@ -30,11 +31,11 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="login-jogos.css">
     <title>Login para jogos</title>
 </head>
-<body class="pagina-login">
-    <main class="caixa-login">
+<body class="pagina-login-jogos">
+    <main class="caixa-login-jogos">
         <h1>Acessar cadastro de jogos</h1>
         <form method="post">
             <label for="usuario">Usuário</label>
@@ -45,6 +46,9 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
             <button type="submit">Entrar</button>
         </form>
+        <?php if ($erro !== "") { ?>
+            <p role="alert"><?= htmlspecialchars($erro, ENT_QUOTES, "UTF-8") ?></p>
+        <?php } ?>
         <p><a href="index.php">Voltar ao início</a></p>
     </main>
 </body>
