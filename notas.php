@@ -64,20 +64,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["nome"])) {
     <h1>Cadastro de aluno</h1>
 
     <form method="POST" class="formulario-notas">
-        <input type="text" name="nome" placeholder="Digite seu nome" required>
-        <br><br>
-        <input type="number" name="idade" placeholder="Digite sua idade" required>
-        <br><br>
-        <input type="number" name="nota1" placeholder="Nota 1" step="0.1" required>
-        <br><br>
-        <input type="number" name="nota2" placeholder="Nota 2" step="0.1" required>
-        <br><br>
-        <input type="number" name="nota3" placeholder="Nota 3" step="0.1" required>
-        <br><br>
-        <input type="number" name="nota4" placeholder="Nota 4" step="0.1" required>
-        <br><br>
-        <input type="number" name="nota5" placeholder="Nota 5" step="0.1" required>
-        <br><br>
+        <label>Nome <input type="text" name="nome" placeholder="Digite seu nome" required></label>
+        <label>Idade <input type="number" name="idade" placeholder="Digite sua idade" required></label>
+        <label>Nota 1 <input type="number" name="nota1" min="0" max="10" placeholder="0 a 10" step="0.1" required></label>
+        <label>Nota 2 <input type="number" name="nota2" min="0" max="10" placeholder="0 a 10" step="0.1" required></label>
+        <label>Nota 3 <input type="number" name="nota3" min="0" max="10" placeholder="0 a 10" step="0.1" required></label>
+        <label>Nota 4 <input type="number" name="nota4" min="0" max="10" placeholder="0 a 10" step="0.1" required></label>
+        <label>Nota 5 <input type="number" name="nota5" min="0" max="10" placeholder="0 a 10" step="0.1" required></label>
         <button type="submit">Calcular</button>
     </form>
 
