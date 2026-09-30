@@ -27,11 +27,11 @@
         <h1>Bem-vindo!</h1>
         <p>Escolha uma página:</p>
         <nav class="menu-inicio">
+            <a href="login-basico.php">Faça seu login aqui</a>
             <a href="idade.php">Verificador de Idade</a>
             <a href="notas.php">Verificador de Notas</a>
             <a href="notas-GET.php">Verificador de Notas com GET</a>
             <a href="jogos.php">Cadastro de Jogos</a>
-            <a href="login-basico.php">Página de Login</a>
         </nav>
     </main>
 </body>
