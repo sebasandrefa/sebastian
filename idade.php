@@ -27,10 +27,10 @@ if ($_SERVER ["REQUEST_METHOD"] == "POST"){
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="idade.css">
     
-    <title>project</title>
+    <title>Verificador de idade</title>
 </head>
 <body class="pagina-idade">
-
+<h1>Verificador de idade</h1>
 
 <form method="POST" class="formulario-idade">
 
@@ -50,18 +50,15 @@ if ($_SERVER ["REQUEST_METHOD"] == "POST"){
     
     <?php if ($mostrar != "") { ?>
         
-        <h2>
-            o <?= $nome ?> é <?= $mostrar ?> <br>
-        </h2>
+        <h2>O <?= htmlspecialchars($nome, ENT_QUOTES, "UTF-8") ?> é <?= $mostrar ?></h2>
         
         <?php } ?>
         
-        <h1>O meu nome é <?=  $nome?> </h1>
-        <h2>Minha idade é <?=  $idade?> </h2><br>
+        <p>Idade: <?= (int) $idade ?> anos</p>
         <p>De acordo com a idade, eu sou <?= $mostrar ?></p><br>
 
     </div>
     <?php } ?>
-        
+    <p><a href="index.php">Voltar ao início</a></p>
     </body>
     </html>
