@@ -1,4 +1,11 @@
 <?php
+session_start();
+
+if (!isset($_SESSION["jogos_logado"])) {
+    header("Location: login-jogos.php");
+    exit;
+}
+
 $mensagem = "";
 $erro = "";
 $jogos = [];
@@ -67,7 +74,7 @@ try {
                             <th scope="col">Nome</th>
                             <th scope="col">Gênero</th>
                             <th scope="col">Nota</th>
-                            <th scope="col">Ano de lançamento</th>
+                            <th scope="col">Data de lançamento</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -90,6 +97,6 @@ try {
 
     <p><a href="index.php">Voltar ao início</a></p>
 
-    
+
 </body>
 </html>

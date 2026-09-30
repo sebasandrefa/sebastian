@@ -31,7 +31,7 @@
             <a href="idade.php">Verificador de Idade</a>
             <a href="notas.php">Verificador de Notas</a>
             <a href="notas-GET.php">Verificador de Notas com GET</a>
-            <a href="jogos.php">Cadastro de Jogos</a>
+            <a href="login-jogos.php">Cadastro de Jogos</a>
         </nav>
     </main>
 </body>
