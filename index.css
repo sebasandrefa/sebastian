@@ -22,7 +22,7 @@ a {
 }
 
 .formulario-notas {
-    width: 280px;
+    width: min(100%, 320px);
     padding: 24px;
     box-sizing: border-box;
     display: flex;
@@ -37,8 +37,17 @@ a {
     display: none;
 }
 
+.formulario-notas label {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 4px;
+}
+
 .formulario-notas input,
 .formulario-notas button {
+    width: 100%;
+    box-sizing: border-box;
     padding: 10px;
     border: 1px solid #cbd5e1;
     border-radius: 5px;
