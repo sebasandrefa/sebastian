@@ -57,7 +57,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET["nome"])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="notas-GET.css">
+    <link rel="stylesheet" href="notas.css">
     <title>Notas com GET</title>
 </head>
 <body class="pagina-notas">
