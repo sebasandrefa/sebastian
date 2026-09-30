@@ -56,7 +56,7 @@ if ($_SERVER ["REQUEST_METHOD"] == "POST"){
         
         <?php } ?>
         
-        <h1>O meu nome é <?=  $nome?> </h1><br>
+        <h1>O meu nome é <?=  $nome?> </h1>
         <h2>Minha idade é <?=  $idade?> </h2><br>
         <p>De acordo com a idade, eu sou <?= $mostrar ?></p><br>
 
