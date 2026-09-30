@@ -66,11 +66,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["nome"])) {
     <form method="POST" class="formulario-notas">
         <label>Nome <input type="text" name="nome" placeholder="Digite seu nome" required></label>
         <label>Idade <input type="number" name="idade" placeholder="Digite sua idade" required></label>
-        <label>Nota 1 <input type="number" name="nota1" min="0" max="10" placeholder="0 a 10" step="0.1" required></label>
-        <label>Nota 2 <input type="number" name="nota2" min="0" max="10" placeholder="0 a 10" step="0.1" required></label>
-        <label>Nota 3 <input type="number" name="nota3" min="0" max="10" placeholder="0 a 10" step="0.1" required></label>
-        <label>Nota 4 <input type="number" name="nota4" min="0" max="10" placeholder="0 a 10" step="0.1" required></label>
-        <label>Nota 5 <input type="number" name="nota5" min="0" max="10" placeholder="0 a 10" step="0.1" required></label>
+        <label>Nota 1 <input type="number" name="nota1" min="0" max="10" step="0.1" required></label>
+        <label>Nota 2 <input type="number" name="nota2" min="0" max="10" step="0.1" required></label>
+        <label>Nota 3 <input type="number" name="nota3" min="0" max="10" step="0.1" required></label>
+        <label>Nota 4 <input type="number" name="nota4" min="0" max="10" step="0.1" required></label>
+        <label>Nota 5 <input type="number" name="nota5" min="0" max="10" step="0.1" required></label>
         <button type="submit">Calcular</button>
     </form>
 
