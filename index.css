@@ -8,7 +8,7 @@ a {
     margin: 10px;
 }
 
-.pagina-notas {
+.pagina-jogos {
     min-height: 100vh;
     margin: 0;
     padding: 32px 16px;
@@ -21,7 +21,7 @@ a {
     color: #1f2937;
 }
 
-.formulario-notas {
+.formulario-jogos {
     width: min(100%, 320px);
     padding: 24px;
     box-sizing: border-box;
@@ -33,19 +33,15 @@ a {
     box-shadow: 0 4px 12px #0000001a;
 }
 
-.formulario-notas br {
-    display: none;
-}
-
-.formulario-notas label {
+.formulario-jogos label {
     display: flex;
     flex-direction: column;
     align-items: stretch;
     gap: 4px;
 }
 
-.formulario-notas input,
-.formulario-notas button {
+.formulario-jogos input,
+.formulario-jogos button {
     width: 100%;
     box-sizing: border-box;
     padding: 10px;
@@ -54,74 +50,17 @@ a {
     font-size: 14px;
 }
 
-.formulario-notas button,
-.formulario-notas input[type="submit"] {
+.formulario-jogos button,
+.formulario-jogos input[type="submit"] {
     border: none;
     background-color: black;
     color: white;
     cursor: pointer;
 }
 
-.formulario-notas button:hover,
-.formulario-notas input[type="submit"]:hover {
+.formulario-jogos button:hover,
+.formulario-jogos input[type="submit"]:hover {
     background-color: #333333;
-}
-
-.pagina-notas .card {
-    width: 100%;
-    max-width: 500px;
-    margin-top: 20px;
-    padding: 20px;
-    box-sizing: border-box;
-    background-color: white;
-    border-radius: 10px;
-    box-shadow: 0 4px 12px #0000001a;
-}
-
-.pagina-notas .card h1 {
-    font-size: 24px;
-    margin: 16px 0;
-}
-
-.pagina-notas .card h2 {
-    font-size: 20px;
-    margin: 12px 0;
-}
-
-.pagina-notas .card p {
-    font-size: 16px;
-    margin: 12px 0;
-}
-
-.card-resultado {
-    width: 280px;
-    margin-top: 20px;
-    padding: 20px;
-    box-sizing: border-box;
-    border-radius: 10px;
-    background-color: white;
-    box-shadow: 0 4px 12px #0000001a;
-}
-
-.situacao {
-    padding: 10px;
-    border-radius: 5px;
-    font-weight: bold;
-}
-
-.aprovado {
-    background-color: #d9f7df;
-    color: #187a2f;
-}
-
-.recuperacao {
-    background-color: #fff3cd;
-    color: #8a6500;
-}
-
-.reprovado {
-    background-color: #f8d7da;
-    color: #a51d2d;
 }
 
 .pagina-login {

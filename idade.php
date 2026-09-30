@@ -25,14 +25,14 @@ if ($_SERVER ["REQUEST_METHOD"] == "POST"){
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="idade.css">
     
     <title>project</title>
 </head>
-<body class="pagina-notas">
+<body class="pagina-idade">
 
 
-<form method="POST" class="formulario-notas">
+<form method="POST" class="formulario-idade">
 
     <input type="text" id="nome" name="nome" placeholder="Digite seu Nome" required>
 

@@ -32,10 +32,10 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     <link rel="stylesheet" href="index.css">
     <title>Cadastro de Jogos</title>
 </head>
-<body class="pagina-notas">
+<body class="pagina-jogos">
     <h1>Cadastrar jogo</h1>
 
-    <form method="post" class="formulario-notas">
+    <form method="post" class="formulario-jogos">
         <label>Nome do jogo <input name="nome" maxlength="100" required></label>
         <label>Gênero <input name="genero" maxlength="50" required></label>
         <label>Nota <input type="number" name="nota" min="0" max="10" required></label>
