@@ -1,8 +1,5 @@
 <?php 
     require "conexao.php";
-    echo "<br>Meu sistema está conectado!"; 
-
-
     $sql = "CREATE TABLE IF NOT EXISTS teste (
     id INT AUTO_INCREMENT PRIMARY KEY, 
     nome VARCHAR (100) NOT NULL, 
@@ -10,9 +7,6 @@
     )";
 
     $pdo->exec($sql);
-
-
-    echo "<br>tabela criada com sucesso";
     ?>
     
 <!DOCTYPE html>
@@ -23,7 +17,12 @@
     <link rel="stylesheet" href="index.css">
     <title>Home</title>
 </head>
-<body>
+<body class="pagina-inicio">
+    <div class="status-inicio">
+        <p>Conectado com sucesso</p>
+        <p>Meu sistema está conectado!</p>
+        <p>Tabela criada com sucesso</p>
+    </div>
     <main class="inicio">
         <h1>Bem-vindo!</h1>
         <p>Escolha uma página:</p>
