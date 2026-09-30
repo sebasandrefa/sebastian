@@ -47,6 +47,11 @@ a {
     box-shadow: 0 6px 18px #00000012;
 }
 
+.caixa-login {
+    width: min(100%, 320px);
+    padding: 24px;
+}
+
 .inicio h1,
 .caixa-login h1,
 .pagina-jogos h1 {

@@ -1,5 +1,7 @@
 <?php
 session_start();
+header("Cache-Control: no-store, no-cache, must-revalidate, max-age=0");
+header("Pragma: no-cache");
 
 if (!isset($_SESSION["jogos_logado"])) {
     header("Location: login-jogos.php");
@@ -95,7 +97,7 @@ try {
         <?php } ?>
     </section>
 
-    <p><a href="index.php">Voltar ao início</a></p>
+    <p><a href="login-jogos.php?sair=1">Voltar ao início</a></p>
 
 
 </body>
