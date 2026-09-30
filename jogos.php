@@ -14,28 +14,19 @@ try {
         ano_lancamento INT
     )");
 
-     $colunas = $pdo->query("SHOW COLUMNS FROM jogos")->fetchAll(PDO::FETCH_COLUMN);
-    if (!in_array("ano_lancamento", $colunas, true)) {
+    $colunas = $pdo->query("SHOW COLUMNS FROM jogos")->fetchAll(PDO::FETCH_COLUMN);
+    if (!in_array("ano_lancamento", $colunas)) {
         $pdo->exec("ALTER TABLE jogos ADD COLUMN ano_lancamento INT NULL");
     }
 
-    if ($_SERVER["REQUEST_METHOD"] === "POST") {
-        $sql = "INSERT INTO jogos (nome, genero, nota, ano_lancamento)
-                VALUES (?, ?, ?, ?)";
-        $stmt = $pdo->prepare($sql);
-        $stmt->execute([
-            $_POST["nome"],
-            $_POST["genero"],
-            $_POST["nota"],
-            $_POST["ano_lancamento"]
-        ]);
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        $pdo->prepare("INSERT INTO jogos (nome, genero, nota, ano_lancamento) VALUES (?, ?, ?, ?)")
+            ->execute([$_POST["nome"], $_POST["genero"], $_POST["nota"], $_POST["ano_lancamento"]]);
         $mensagem = "Jogo cadastrado com sucesso!";
     }
 
-    $stmt = $pdo->query("SELECT id, nome, genero, nota, ano_lancamento FROM jogos ORDER BY id DESC");
-    $jogos = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    $jogos = $pdo->query("SELECT * FROM jogos ORDER BY id DESC")->fetchAll(PDO::FETCH_ASSOC);
 } catch (Throwable $erroBanco) {
-    error_log("Erro em jogos.php: " . $erroBanco->getMessage());
     $erro = "Falha no banco de dados: " . $erroBanco->getMessage();
 }
 ?>
@@ -61,7 +52,9 @@ try {
     <?php if ($erro !== "") { ?>
         <p role="alert"><?= htmlspecialchars($erro, ENT_QUOTES, "UTF-8") ?></p>
     <?php } ?>
-    <?php if ($mensagem) echo "<p>$mensagem</p>"; ?>
+    <?php if ($mensagem !== "") { ?>
+        <p><?= htmlspecialchars($mensagem, ENT_QUOTES, "UTF-8") ?></p>
+    <?php } ?>
 
     <section class="lista-jogos" aria-labelledby="titulo-jogos">
         <h2 id="titulo-jogos">Jogos cadastrados</h2>
@@ -81,8 +74,8 @@ try {
                         <?php foreach ($jogos as $jogo) { ?>
                             <tr>
                                 <td><?= (int) $jogo["id"] ?></td>
-                                <td><?= htmlspecialchars($jogo["nome"], ENT_QUOTES, "UTF-8") ?></td>
-                                <td><?= htmlspecialchars($jogo["genero"], ENT_QUOTES, "UTF-8") ?></td>
+                                <td><?= htmlspecialchars($jogo["nome"] ?? "", ENT_QUOTES, "UTF-8") ?></td>
+                                <td><?= htmlspecialchars($jogo["genero"] ?? "", ENT_QUOTES, "UTF-8") ?></td>
                                 <td><?= htmlspecialchars((string) $jogo["nota"], ENT_QUOTES, "UTF-8") ?></td>
                                 <td><?= htmlspecialchars((string) $jogo["ano_lancamento"], ENT_QUOTES, "UTF-8") ?></td>
                             </tr>
