@@ -47,6 +47,9 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         <label for="nota">Nota</label>
         <input id="nota" type="number" name="nota" min="0" max="10" required>
 
+        <label for="nota">ano de lançamento</label>
+        <input id="nota" type="number" name="nota" required>
+
         <button type="submit">Cadastrar</button>
     </form>
 
