@@ -19,9 +19,9 @@
 </head>
 <body class="pagina-inicio">
     <div class="status-inicio">
-        <p>Conectado com sucesso</p>
-        <p>Meu sistema está conectado!</p>
-        <p>Tabela criada com sucesso</p>
+        <a>Conectado com sucesso</a>
+        <a>Meu sistema está conectado!</a>
+        <a>Tabela criada com sucesso</a><br>
     </div>
     <main class="inicio">
         <h1>Bem-vindo!</h1>
