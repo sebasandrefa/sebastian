@@ -45,20 +45,20 @@ if ($_SERVER ["REQUEST_METHOD"] == "POST"){
     <div class="card">
 
         
-        <h1>Mostrando Nome, Idade e resultado</h1>
+        <h1>Mostrando Nome, Idade</h1><br>
         
     
     <?php if ($mostrar != "") { ?>
         
         <h2>
-            o <?= $nome ?> é <?= $mostrar ?> .
+            o <?= $nome ?> é <?= $mostrar ?> <br>
         </h2>
         
         <?php } ?>
         
-        <h1>O meu nome é <?=  $nome?> </h1>
-        <h2>Minha idade é <?=  $idade?> </h2>
-        <p>De acordo com a idade, eu sou <?= $mostrar ?></p>
+        <h1>O meu nome é <?=  $nome?> </h1><br>
+        <h2>Minha idade é <?=  $idade?> </h2><br>
+        <p>De acordo com a idade, eu sou <?= $mostrar ?></p><br>
 
     </div>
     <?php } ?>

@@ -12,17 +12,15 @@ $pdo->exec("CREATE TABLE IF NOT EXISTS jogos (
 $mensagem = "";
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
-    $nome = $_POST["nome"];
-    $genero = $_POST["genero"];
-    $nota = (int) $_POST["nota"];
-
-    $nome = $pdo->quote($nome);
-    $genero = $pdo->quote($genero);
-
-    $sql = "INSERT INTO jogos (nome, genero, nota)
-            VALUES ($nome, $genero, $nota)";
-
-    $pdo->exec($sql);
+    $sql = "INSERT INTO jogos (nome, genero, nota, ano_lancamento)
+            VALUES (?, ?, ?, ?)";
+    $stmt = $pdo->prepare($sql);
+    $stmt->execute([
+        $_POST["nome"],
+        $_POST["genero"],
+        $_POST["nota"],
+        $_POST["ano_lancamento"]
+    ]);
     $mensagem = "Jogo cadastrado com sucesso!";
 }
 ?>
@@ -38,25 +36,14 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     <h1>Cadastrar jogo</h1>
 
     <form method="post" class="formulario-notas">
-        <label for="nome">Nome do jogo</label>
-        <input id="nome" type="text" name="nome" maxlength="100" required>
-
-        <label for="genero">Gênero</label>
-        <input id="genero" type="text" name="genero" maxlength="50" required>
-
-        <label for="nota">Nota</label>
-        <input id="nota" type="number" name="nota" min="0" max="10" required>
-
-        <label for="nota">ano de lançamento</label>
-        <input id="nota" type="number" name="nota" required>
-
+        <label>Nome do jogo <input name="nome" maxlength="100" required></label>
+        <label>Gênero <input name="genero" maxlength="50" required></label>
+        <label>Nota <input type="number" name="nota" min="0" max="10" required></label>
+        <label>Ano de lançamento <input type="number" name="ano_lancamento" required></label>
         <button type="submit">Cadastrar</button>
     </form>
 
-    <?php if ($mensagem !== "") { ?>
-        <p><?php echo htmlspecialchars($mensagem, ENT_QUOTES, "UTF-8"); ?></p>
-    <?php } ?>
-
+    <?php if ($mensagem) echo "<p>$mensagem</p>"; ?>
     <p><a href="index.php">Voltar ao início</a></p>
 </body>
 </html>
