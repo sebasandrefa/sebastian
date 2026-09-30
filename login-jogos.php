@@ -36,12 +36,12 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 </head>
 <body class="pagina-login-jogos">
     <main class="caixa-login-jogos">
-        <h1>Acessar cadastro de jogos</h1>
+        <h1>Login</h1>
         <form method="post">
-            <label for="usuario">Usuário</label>
+            <label for="usuario">Usuário:</label>
             <input id="usuario" type="text" name="usuario" required>
 
-            <label for="senha">Senha</label>
+            <label for="senha">Senha:</label>
             <input id="senha" type="password" name="senha" required>
 
             <button type="submit">Entrar</button>

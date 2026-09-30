@@ -35,6 +35,7 @@ body {
 .caixa-login-jogos label {
     display: block;
     margin: 12px 0 6px;
+    text-align: left;
 }
 
 .caixa-login-jogos input,
