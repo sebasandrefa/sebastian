@@ -1,31 +1,38 @@
 <?php
-require "conexao.php";
-
-$pdo->exec("CREATE TABLE IF NOT EXISTS jogos (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    nome VARCHAR(100),
-    genero VARCHAR(50),
-    nota INT,
-    ano_lancamento INT
-)");
-
 $mensagem = "";
+$erro = "";
+$jogos = [];
 
-if ($_SERVER["REQUEST_METHOD"] === "POST") {
-    $sql = "INSERT INTO jogos (nome, genero, nota, ano_lancamento)
-            VALUES (?, ?, ?, ?)";
-    $stmt = $pdo->prepare($sql);
-    $stmt->execute([
-        $_POST["nome"],
-        $_POST["genero"],
-        $_POST["nota"],
-        $_POST["ano_lancamento"]
-    ]);
-    $mensagem = "Jogo cadastrado com sucesso!";
+try {
+    require "conexao.php";
+
+    $pdo->exec("CREATE TABLE IF NOT EXISTS jogos (
+        id INT AUTO_INCREMENT PRIMARY KEY,
+        nome VARCHAR(100),
+        genero VARCHAR(50),
+        nota INT,
+        ano_lancamento INT
+    )");
+
+    if ($_SERVER["REQUEST_METHOD"] === "POST") {
+        $sql = "INSERT INTO jogos (nome, genero, nota, ano_lancamento)
+                VALUES (?, ?, ?, ?)";
+        $stmt = $pdo->prepare($sql);
+        $stmt->execute([
+            $_POST["nome"],
+            $_POST["genero"],
+            $_POST["nota"],
+            $_POST["ano_lancamento"]
+        ]);
+        $mensagem = "Jogo cadastrado com sucesso!";
+    }
+
+    $stmt = $pdo->query("SELECT id, nome, genero, nota, ano_lancamento FROM jogos ORDER BY id DESC");
+    $jogos = $stmt->fetchAll(PDO::FETCH_ASSOC);
+} catch (Throwable $erroBanco) {
+    error_log("Erro em jogos.php: " . $erroBanco->getMessage());
+    $erro = "Não foi possível carregar os jogos. Verifique a conexão e a estrutura da tabela no banco de dados.";
 }
-
-$stmt = $pdo->query("SELECT id, nome, genero, nota, ano_lancamento FROM jogos ORDER BY id DESC");
-$jogos = $stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -46,6 +53,9 @@ $jogos = $stmt->fetchAll(PDO::FETCH_ASSOC);
         <button type="submit">Cadastrar</button>
     </form>
 
+    <?php if ($erro !== "") { ?>
+        <p role="alert"><?= htmlspecialchars($erro, ENT_QUOTES, "UTF-8") ?></p>
+    <?php } ?>
     <?php if ($mensagem) echo "<p>$mensagem</p>"; ?>
 
     <section class="lista-jogos" aria-labelledby="titulo-jogos">
