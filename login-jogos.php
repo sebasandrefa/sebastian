@@ -8,10 +8,7 @@ if (isset($_GET["sair"])) {
     exit;
 }
 
-if (isset($_SESSION["jogos_logado"])) {
-    header("Location: jogos.php");
-    exit;
-}
+unset($_SESSION["jogos_logado"]);
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $usuario = $_POST["usuario"] ?? "";
