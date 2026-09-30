@@ -14,7 +14,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $usuario = $_POST["usuario"] ?? "";
     $senha = $_POST["senha"] ?? "";
 
-    if ($usuario === "sebas" && $senha === "1234") {
+    if ($usuario === "sebasandrefa" && $senha === "300609") {
         session_regenerate_id(true);
         $_SESSION["jogos_logado"] = true;
         header("Location: jogos.php");
