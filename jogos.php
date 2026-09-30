@@ -5,7 +5,8 @@ $pdo->exec("CREATE TABLE IF NOT EXISTS jogos (
     id INT AUTO_INCREMENT PRIMARY KEY,
     nome VARCHAR(100),
     genero VARCHAR(50),
-    nota INT
+    nota INT,
+    ano_lancamento INT
 )");
 
 $mensagem = "";
