@@ -31,7 +31,7 @@ try {
     $jogos = $stmt->fetchAll(PDO::FETCH_ASSOC);
 } catch (Throwable $erroBanco) {
     error_log("Erro em jogos.php: " . $erroBanco->getMessage());
-    $erro = "Não foi possível carregar os jogos. Verifique a conexão e a estrutura da tabela no banco de dados.";
+    $erro = "Falha no banco de dados: " . $erroBanco->getMessage();
 }
 ?>
 <!DOCTYPE html>
