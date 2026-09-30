@@ -22,7 +22,7 @@ a {
 }
 
 .formulario-jogos {
-    width: min(100%, 320px);
+    width: min(100%, 280px);
     padding: 24px;
     box-sizing: border-box;
     display: flex;
@@ -31,13 +31,6 @@ a {
     background-color: white;
     border-radius: 10px;
     box-shadow: 0 4px 12px #0000001a;
-}
-
-.formulario-jogos label {
-    display: flex;
-    flex-direction: column;
-    align-items: stretch;
-    gap: 4px;
 }
 
 .formulario-jogos input,

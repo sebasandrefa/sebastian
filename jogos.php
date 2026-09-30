@@ -42,10 +42,10 @@ try {
     <h1>Cadastrar jogo</h1>
 
     <form method="post" class="formulario-jogos">
-        <label>Nome do jogo <input name="nome" maxlength="100" required></label>
-        <label>Gênero <input name="genero" maxlength="50" required></label>
-        <label>Nota <input type="number" name="nota" min="0" max="10" required></label>
-        <label>Ano de lançamento <input type="number" name="ano_lancamento" required></label>
+        <input type="text" name="nome" maxlength="100" placeholder="Nome do jogo" required>
+        <input type="text" name="genero" maxlength="50" placeholder="Gênero" required>
+        <input type="number" name="nota" min="0" max="10" placeholder="Nota" required>
+        <input type="number" name="ano_lancamento" placeholder="Ano de lançamento" required>
         <button type="submit">Cadastrar</button>
     </form>
 
