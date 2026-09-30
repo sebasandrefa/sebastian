@@ -63,6 +63,40 @@ a {
     background-color: #333333;
 }
 
+.lista-jogos {
+    width: min(100%, 900px);
+    margin-top: 28px;
+    padding: 20px;
+    box-sizing: border-box;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px #0000001a;
+}
+
+.tabela-jogos-rolagem {
+    overflow-x: auto;
+}
+
+.lista-jogos table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+.lista-jogos th,
+.lista-jogos td {
+    padding: 12px;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.lista-jogos th {
+    background-color: #f3f6fb;
+}
+
+.lista-jogos tbody tr:last-child td {
+    border-bottom: none;
+}
+
 .pagina-login {
     min-height: 100vh;
     margin: 0;

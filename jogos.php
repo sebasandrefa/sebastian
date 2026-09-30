@@ -23,6 +23,9 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     ]);
     $mensagem = "Jogo cadastrado com sucesso!";
 }
+
+$stmt = $pdo->query("SELECT id, nome, genero, nota, ano_lancamento FROM jogos ORDER BY id DESC");
+$jogos = $stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -44,6 +47,39 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     </form>
 
     <?php if ($mensagem) echo "<p>$mensagem</p>"; ?>
+
+    <section class="lista-jogos" aria-labelledby="titulo-jogos">
+        <h2 id="titulo-jogos">Jogos cadastrados</h2>
+        <?php if (count($jogos) > 0) { ?>
+            <div class="tabela-jogos-rolagem">
+                <table>
+                    <thead>
+                        <tr>
+                            <th scope="col">ID</th>
+                            <th scope="col">Nome</th>
+                            <th scope="col">Gênero</th>
+                            <th scope="col">Nota</th>
+                            <th scope="col">Ano de lançamento</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php foreach ($jogos as $jogo) { ?>
+                            <tr>
+                                <td><?= (int) $jogo["id"] ?></td>
+                                <td><?= htmlspecialchars($jogo["nome"], ENT_QUOTES, "UTF-8") ?></td>
+                                <td><?= htmlspecialchars($jogo["genero"], ENT_QUOTES, "UTF-8") ?></td>
+                                <td><?= htmlspecialchars((string) $jogo["nota"], ENT_QUOTES, "UTF-8") ?></td>
+                                <td><?= htmlspecialchars((string) $jogo["ano_lancamento"], ENT_QUOTES, "UTF-8") ?></td>
+                            </tr>
+                        <?php } ?>
+                    </tbody>
+                </table>
+            </div>
+        <?php } else { ?>
+            <p>Nenhum jogo cadastrado ainda.</p>
+        <?php } ?>
+    </section>
+
     <p><a href="index.php">Voltar ao início</a></p>
 </body>
 </html>
