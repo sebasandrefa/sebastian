@@ -34,5 +34,30 @@
             </ul>
         </nav>
     </header>
+    <main>
+        <section id="inicio" class="inicio">
+            
+        <div class="inicio-conteudo">
+
+            <p class="saudacao">Olá! Eu sou </p>
+
+            <h1>Sebastián Andrade</h1>
+
+            <h2>Desenvolvedor em formação</h2>
+
+            <p>
+                Sou desenvolvedor de sistemas com foco em criar 
+                soluções práticas, eficientes e com boa experiência 
+                de uso, foco em criação de sites.
+            </p>
+            <a href="#projetos" class="botao">
+                Ver meus projetos
+            </a>
+
+        </div>
+    </section>
+
+    
+    </main>
 </body>
 </html>
