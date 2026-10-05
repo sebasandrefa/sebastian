@@ -1,13 +1,12 @@
 <?php
 
-require __DIR__."/../conexao.php";
 
 $mensagem = "";
 $erro = "";
 $jogos = [];
 
 try {
-    require "conexao.php";
+    require __DIR__ . "/../conexao.php";
 
     $pdo->exec("CREATE TABLE IF NOT EXISTS jogos (
         id INT AUTO_INCREMENT PRIMARY KEY,
