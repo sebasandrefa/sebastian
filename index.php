@@ -170,7 +170,7 @@
                     </div>
                     <h3>Login Básico</h3>
                     <p>
-                        Sistema desenvolvido para praticar
+                        Login simples desenvolvido para praticar
                         formulários e manipulação de dados.
                     </p>
                     <div class="tecnologias">
@@ -179,23 +179,6 @@
                         <span>PHP</span>
                     </div>
                     <a href="/projetos/login-basico.php" class="link-projeto">
-                        Ver projeto →
-                    </a>
-                     <div class="projeto-card">
-                    <div class="projeto-numero">
-                        03
-                    </div>
-                    <h3>Cadastro de jogos</h3>
-                    <p>
-                        Sistema desenvolvido para praticar
-                        formulários e manipulação de dados.
-                    </p>
-                    <div class="tecnologias">
-                        <span>HTML</span>
-                        <span>CSS</span>
-                        <span>PHP</span>
-                    </div>
-                    <a href="/projetos/jogos.php" class="link-projeto">
                         Ver projeto →
                     </a>
 
