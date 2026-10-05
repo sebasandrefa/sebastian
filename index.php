@@ -18,21 +18,21 @@
     <title>Home</title>
 </head>
 <body class="pagina-inicio">
-    <div class="status-inicio">
-        <a>Conectado com sucesso</a>
-        <a>Meu sistema está conectado!</a>
-        <a>Tabela criada com sucesso</a><br>
-    </div>
-    <main class="inicio">
-        <h1>Bem-vindo!</h1>
-        <p>Escolha uma página:</p>
-        <nav class="menu-inicio">
-            <a href="projetos/login-basico.php">Faça seu login aqui</a>
-            <a href="projetos/idade.php">Verificador de Idade</a>
-            <a href="projetos/notas.php">Verificador de Notas</a>
-            <a href="projetos/notas-GET.php">Verificador de Notas com GET</a>
-            <a href="projetos/login-jogos.php">Cadastro de Jogos</a>
+    <!-- =====================
+         MENU DE NAVEGAÇÃO
+    ====================== -->
+    <header>
+        <nav class="navbar">
+            <h2 class="logo">Meu Portfólio</h2>
+
+            <ul class="menu">
+                <li><a href="#inicio">Início</a></li>
+                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="#habilidades">Habilidades</a></li>
+                <li><a href="#projetos">Projetos</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
         </nav>
-    </main>
+    </header>
 </body>
 </html>
