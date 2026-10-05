@@ -204,7 +204,7 @@
     <footer>
         <p>
             Desenvolvido por <a href="https://sebastian315.devlook.xyz"> 
-                Sebastián Andrade</a> - 2026
+                Sebastián Andrade</a> . 2026
         </p>
     </footer>
 
