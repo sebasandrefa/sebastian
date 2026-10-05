@@ -53,11 +53,153 @@
             <a href="#projetos" class="botao">
                 Ver meus projetos
             </a>
+        </div>
+    </section>
+    <section id="sobre" class="secao">
+        <h2 class="titulo-secao">sobre mim</h2>
+        <div class="sobre-conteudo">
+            <h3>Quem sou eu?</h3>
+            <p>
+                Meu nome é Sebastián Andrade e sou aluno
+                de Analise em desenvolvimento de Sistemas
+            </p>
 
+            <p>
+                Atualmente estou ainda tendo aulas e não conclui o curso.
+                Este portfólio reúne alguns dos projetos que desenvolvi durante
+                o curso.
+            </p>
+
+            <p>
+
+                Meu objetivo é continuar aprendendo e me tornar um desenvolvedor de sistemas
+                completo. fazendo sites, programando e dando soluções aos problemas do dia a dia.
+            </p>
         </div>
     </section>
 
-    
+    <section>
+        <section id="habilidades" class="secao secao-destaque">
+            <h2 class="titulo-secao">Habilidades</h2>
+            <p class="subtitulo-secao">
+                Algumas tecnologias que estou estudando:
+            </p>
+            <div class="lista-habilidades">
+                <div class="habilidade">
+                    HTML
+                </div>
+                <div class="habilidade">
+                    CSS
+                </div>
+                <div class="habilidade">
+                    PHP
+                </div>
+                <div class="habilidade">
+                    PHYTON
+                </div>
+                <div class="habilidade">
+                    NODE.JS
+                </div>
+                <div class="habilidade">
+                    REACT
+                </div>
+            </div>
+        </section>
+        <section id="projetos" class="secao">
+            <h2 class="titulo-secao">Meus Projetos</h2>
+            <p class="subtitulo-secao">
+                Alguns projetos que desenvolvi durante o curso:
+            </p>
+            <div class="projetos-container">
+            <div class="projeto-card">
+                <div class="projeto-numero">
+                    01
+                </div>
+                    <h3>Verificação de idade</h3>
+                    <p>
+                        Sistema desenvolvido para praticar
+                        formulários e manipulação de dados.
+                    </p>
+                    <div class="tecnologias">
+                        <span>HTML</span>
+                        <span>CSS</span>
+                        <span>PHP</span>
+                    </div>
+                    <a href="/projetos/idade.php" class="link-projeto">
+                        Ver projeto →
+                    </a>
+                </div>
+                <div class="projeto-card">
+                    <div class="projeto-numero">
+                        02
+                    </div>
+                    <h3>Cadastro de notas</h3>
+                    <p>
+                        Sistema desenvolvido para praticar
+                        formulários e manipulação de dados.
+                    </p>
+                    <div class="tecnologias">
+                        <span>HTML</span>
+                        <span>CSS</span>
+                        <span>PHP</span>
+                    </div>
+                    <a href="/projetos/notas.php" class="link-projeto">
+                        Ver projeto →
+                    </a>
+                </div>
+                <div class="projeto-card">
+                    <div class="projeto-numero">
+                        03
+                    </div>
+                    <h3>Cadastro de jogos</h3>
+                    <p>
+                        Sistema desenvolvido para praticar
+                        formulários e manipulação de dados.
+                    </p>
+                    <div class="tecnologias">
+                        <span>HTML</span>
+                        <span>CSS</span>
+                        <span>PHP</span>
+                    </div>
+                    <a href="/projetos/jogos.php" class="link-projeto">
+                        Ver projeto →
+                    </a>
+                     <div class="projeto-card">
+                    <div class="projeto-numero">
+                        04
+                    </div>
+                    <h3>Login Básico</h3>
+                    <p>
+                        Sistema desenvolvido para praticar
+                        formulários e manipulação de dados.
+                    </p>
+                    <div class="tecnologias">
+                        <span>HTML</span>
+                        <span>CSS</span>
+                        <span>PHP</span>
+                    </div>
+                    <a href="/projetos/login-basico.php" class="link-projeto">
+                        Ver projeto →
+                    </a>
+                     <div class="projeto-card">
+                    <div class="projeto-numero">
+                        03
+                    </div>
+                    <h3>Cadastro de jogos</h3>
+                    <p>
+                        Sistema desenvolvido para praticar
+                        formulários e manipulação de dados.
+                    </p>
+                    <div class="tecnologias">
+                        <span>HTML</span>
+                        <span>CSS</span>
+                        <span>PHP</span>
+                    </div>
+                    <a href="/projetos/jogos.php" class="link-projeto">
+                        Ver projeto →
+                    </a>
+
+            </div>  
     </main>
 </body>
 </html>
