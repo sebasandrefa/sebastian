@@ -4,11 +4,9 @@ session_start();
 if (isset($_GET["sair"])) {
     session_unset();
     session_destroy();
-    header("Location: index.php");
+    header("Location: ../index.php");
     exit;
 }
-
-unset($_SESSION["jogos_logado"]);
 
 $erro = "";
 

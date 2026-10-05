@@ -1,5 +1,10 @@
 <?php
+session_start();
 
+if (empty($_SESSION["jogos_logado"])) {
+    header("Location: login-jogos.php");
+    exit;
+}
 
 $mensagem = "";
 $erro = "";
@@ -90,7 +95,11 @@ try {
         <?php } ?>
     </section>
 
-    <p><a href="../index.php">Voltar ao início</a></p>
+    <p>
+        <a href="../index.php">Voltar ao início</a>
+        |
+        <a href="login-jogos.php?sair=1">Sair</a>
+    </p>
 
 
 </body>
