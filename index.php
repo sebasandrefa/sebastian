@@ -181,8 +181,25 @@
                     <a href="/projetos/login-basico.php" class="link-projeto">
                         Ver projeto →
                     </a>
+                </div>  
+            </div>
+        </section>
+        <section id="contato" class="secao">
+            <h2 class="titulo-secao">Contato</h2>
+            <p class="subtitulo-secao">
+                Quer entrar em contato comigo?
+            </p>
+            <div class="contato-container">
+                <div class="contato-item">
+                    <h3>Email:</h3>
+                    <p>sebasandrefa@gmail.com</p>
+                </div>
+                <div class="contato-item">
+                    <h3>Github:</h3>
+                    <p>github.com/sebasandrefa</p>
+                </div>
+                
 
-            </div>  
     </main>
 </body>
 </html>
