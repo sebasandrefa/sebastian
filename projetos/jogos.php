@@ -1,12 +1,6 @@
 <?php
-session_start();
-header("Cache-Control: no-store, no-cache, must-revalidate, max-age=0");
-header("Pragma: no-cache");
 
-if (!isset($_SESSION["jogos_logado"])) {
-    header("Location: login-jogos.php");
-    exit;
-}
+require __DIR__."/../conexao.php";
 
 $mensagem = "";
 $erro = "";
