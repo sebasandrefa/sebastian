@@ -90,6 +90,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["nome"])) {
             <?php } ?>
         </div>
     <?php } ?>
-    <p><a href="index.php">Voltar ao início</a></p>
+    <p><a href="../index.php">Voltar ao início</a></p>
 </body>
 </html>

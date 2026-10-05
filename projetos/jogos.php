@@ -97,7 +97,7 @@ try {
         <?php } ?>
     </section>
 
-    <p><a href="login-jogos.php?sair=1">Voltar ao início</a></p>
+    <p><a href="../login-jogos.php?sair=1">Voltar ao início</a></p>
 
 
 </body>

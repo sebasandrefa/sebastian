@@ -97,6 +97,6 @@ if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET["nome"])) {
             <?php } ?>
         </div>
     <?php } ?>
-    <p><a href="index.php">Voltar ao início</a></p>
+    <p><a href="../index.php">Voltar ao início</a></p>
 </body>
 </html>
