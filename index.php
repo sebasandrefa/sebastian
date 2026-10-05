@@ -198,8 +198,16 @@
                     <h3>Github:</h3>
                     <p>github.com/sebasandrefa</p>
                 </div>
-                
-
+            </div>
+        </section>
     </main>
+    <footer>
+        <p>
+            Desenvolvido por <a href="https://sebastian315.devlook.xyz"> 
+                Sebastián Andrade</a> - 2026
+        </p>
+    </footer>
+
 </body>
+
 </html>
