@@ -185,7 +185,7 @@
                 </div>  
             </div>
         </section>
-        <section id="contato" class="secao">
+        <section id="contato" class="secao secao-destaque">
             <h2 class="titulo-secao">Contato</h2>
             <p class="subtitulo-secao">
                 Quer entrar em contato comigo?
