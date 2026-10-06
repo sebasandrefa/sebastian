@@ -243,12 +243,110 @@ header {
 }
 
 
-.footer {
+footer {
     background-color: #111827;
     color: #cccccc;
     text-align: center;
     padding: 30px;
 }
 
-/*@media (max-width: 800px) {
-}*/
+@media (max-width: 500px) {
+
+    .navbar {
+        padding: 15px;
+    }
+
+    .logo {
+        font-size: 22px;
+    }
+
+    .menu {
+        gap: 10px 15px;
+        font-size: 14px;
+    }
+
+    .inicio {
+        min-height: 75vh;
+        padding: 50px 0;
+    }
+
+    .inicio h1 {
+        font-size: 36px;
+    }
+
+    .inicio h2 {
+        font-size: 20px;
+    }
+
+    .saudacao {
+        font-size: 17px;
+    }
+
+    .inicio-conteudo > p {
+        font-size: 15px;
+    }
+
+    .botao {
+        padding: 10px 20px;
+        margin-top: 20px;
+    }
+
+    .secao {
+        padding: 50px 15px;
+    }
+
+    .titulo-secao {
+        font-size: 27px;
+    }
+
+    .subtitulo-secao {
+        font-size: 15px;
+        margin-bottom: 30px;
+    }
+
+    .foto {
+        width: 140px;
+        height: 140px;
+        min-width: 140px;
+        font-size: 42px;
+    }
+
+    .sobre-texto h3 {
+        font-size: 21px;
+    }
+
+    .sobre-texto p {
+        font-size: 15px;
+    }
+
+    .habilidade {
+        padding: 10px 15px;
+        font-size: 14px;
+    }
+
+    .projeto-card {
+        padding: 20px;
+    }
+
+    .projeto-numero {
+        font-size: 30px;
+    }
+
+    .projeto-card h3 {
+        font-size: 20px;
+    }
+
+    .projeto-card p {
+        font-size: 15px;
+    }
+
+    .contato-item {
+        min-height: auto;
+        padding: 25px 20px;
+    }
+
+    footer {
+        padding: 25px 15px;
+        font-size: 14px;
+    }
+}
