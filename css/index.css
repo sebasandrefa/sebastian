@@ -228,21 +228,27 @@ header {
 
 .contato-item {
     background-color: white;
-    width: 200px;
-    padding: 25px;
+    width: min(100%, 300px);
+    min-height: 140px;
+    padding: 30px 24px;
     text-align: center;
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.10);
+    border-radius: 10px;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.10);
 }
 
 .contato-item h3 {
     color: #2563eb;
-    margin-bottom: 5px;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.contato-item p {
+    overflow-wrap: anywhere;
 }
 
 .footer {
     background-color: #111827;
-    color: #dddddd;
+    color: #cccccc;
     text-align: center;
     padding: 30px;
 }
