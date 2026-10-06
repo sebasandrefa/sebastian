@@ -56,9 +56,11 @@ header {
     text-decoration: none;
 
     font-weight: bold;
+    transition: color 0.2s ease;
 }
 
-.menu a:hover {
+.menu a:hover,
+.menu a:focus-visible {
     color: #60a5fa;
 }
 
@@ -113,6 +115,12 @@ header {
     box-shadow: 0 3px 12px rgba(0, 0, 0, 0.10);
 
     margin-bottom: 30px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.conteudo-projeto:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
 }
 
 .voltar-projetos {
@@ -120,15 +128,24 @@ header {
 }
 
 .voltar-projetos a {
+    display: inline-flex;
+    padding: 10px 16px;
+    border: 1px solid #dbeafe;
+    border-radius: 8px;
+    background: #eff6ff;
     color: #2563eb;
 
     text-decoration: none;
 
     font-weight: bold;
+    transition: transform 0.2s ease, background-color 0.2s ease, border-color 0.2s ease;
 }
 
-.voltar-projetos a:hover {
-    text-decoration: underline;
+.voltar-projetos a:hover,
+.voltar-projetos a:focus-visible {
+    background: #dbeafe;
+    border-color: #bfdbfe;
+    transform: translateY(-1px);
 }
 
 footer {
@@ -145,15 +162,16 @@ footer a {
     color: #60a5fa;
 
     text-decoration: none;
+    transition: color 0.2s ease;
 }
 
-footer a:hover {
+footer a:hover,
+footer a:focus-visible {
+    color: #93c5fd;
     text-decoration: underline;
 }
 
 @media (max-width: 800px) {
-}
-
     .navbar {
         flex-direction: column;
 
@@ -179,3 +197,13 @@ footer a:hover {
     .conteudo-projeto {
         padding: 25px;
     }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+    }
+}

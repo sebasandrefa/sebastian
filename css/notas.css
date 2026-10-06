@@ -46,6 +46,12 @@ body {
     border: 1px solid #ccc;
     border-radius: 7px;
     font: inherit;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease, transform 0.2s ease;
+}
+
+.formulario-notas input:focus-visible {
+    outline: 3px solid #bfdbfe;
+    border-color: #2563eb;
 }
 
 .formulario-notas button,
@@ -59,6 +65,7 @@ body {
 .formulario-notas button:hover,
 .formulario-notas input[type="submit"]:hover {
     background: #444;
+    transform: translateY(-1px);
 }
 
 .card-resultado {
@@ -69,6 +76,12 @@ body {
     border-radius: 12px;
     background: white;
     box-shadow: 0 6px 18px #00000012;
+    animation: aparecer 0.25s ease-out;
+}
+
+@keyframes aparecer {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
 .situacao {
@@ -109,4 +122,11 @@ body {
 
 .voltar-inicio a:active {
     transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+    }
 }
