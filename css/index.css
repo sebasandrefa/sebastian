@@ -240,8 +240,11 @@ header {
     margin-bottom: 5px;
 }
 
-.contato-item p {
-    color: #555555;
-    margin-bottom: 10px;
+.footer {
+    background-color: #111827;
+    color: #dddddd;
+    text-align: center;
+    padding: 30px;
 }
 
+.
