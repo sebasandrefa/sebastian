@@ -47,7 +47,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         <?php if ($erro !== "") { ?>
             <p role="alert"><?= htmlspecialchars($erro, ENT_QUOTES, "UTF-8") ?></p>
         <?php } ?>
-        <p><a href="../index.php">Voltar ao início</a></p>
+        <p><a class="voltar-inicio" href="../index.php">← Voltar ao início</a></p>
     </main>
 </body>
 </html>

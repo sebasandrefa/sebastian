@@ -95,10 +95,9 @@ try {
         <?php } ?>
     </section>
 
-    <p>
-        <a href="../index.php">Voltar ao início</a>
-        |
-        <a href="login-jogos.php?sair=1">Sair</a>
+    <p class="acoes-jogos">
+        <a class="voltar-inicio" href="../index.php">← Voltar ao início</a>
+        <a class="voltar-inicio" href="login-jogos.php?sair=1">Sair</a>
     </p>
 
 

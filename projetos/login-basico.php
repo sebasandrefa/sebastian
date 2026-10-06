@@ -39,7 +39,10 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" || $_SERVER["REQUEST_METHOD"] === "GET
             <button type="submit" formmethod="get">Testar com GET</button>
         </form>
 
-        <p><?php echo htmlspecialchars($mensagem, ENT_QUOTES, "UTF-8"); ?></p>
+        <?php if ($mensagem !== "") { ?>
+            <p class="login-mensagem" role="status"><?= htmlspecialchars($mensagem, ENT_QUOTES, "UTF-8") ?></p>
+        <?php } ?>
+        <a class="voltar-inicio" href="../index.php">← Voltar ao início</a>
     </div>
 </body>
 </html>

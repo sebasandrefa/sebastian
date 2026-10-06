@@ -176,11 +176,15 @@ header {
 
 .projetos-container {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 25px;
+    max-width: 900px;
+    margin: 0 auto;
 }
 
 .projeto-card {
+    display: flex;
+    flex-direction: column;
     background-color: white;
     padding: 30px;
     border-radius: 10px;
@@ -227,9 +231,112 @@ header {
 }
 
 .link-projeto {
+    margin-top: auto;
     color: #2563eb;
     text-decoration: none;
     font-weight: bold;
+}
+
+.pagina-login {
+    min-height: 100vh;
+    padding: 32px 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f3f4f6;
+}
+
+.caixa-login {
+    width: min(100%, 420px);
+    padding: 36px;
+    border: 1px solid #e5e7eb;
+    border-radius: 14px;
+    background: #fff;
+    box-shadow: 0 12px 32px rgba(17, 24, 39, 0.10);
+}
+
+.caixa-login h1 {
+    margin: 0 0 8px;
+    color: #111827;
+    text-align: center;
+    font-size: 30px;
+}
+
+.caixa-login form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 24px;
+}
+
+.caixa-login label {
+    margin-top: 6px;
+    color: #374151;
+    font-weight: 600;
+}
+
+.caixa-login input {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    font: inherit;
+}
+
+.caixa-login input:focus {
+    outline: 3px solid #bfdbfe;
+    border-color: #2563eb;
+}
+
+.caixa-login button {
+    padding: 12px 16px;
+    border: 1px solid #2563eb;
+    border-radius: 8px;
+    background: #2563eb;
+    color: white;
+    font: inherit;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.caixa-login button:hover {
+    background: #1d4ed8;
+}
+
+.caixa-login button[type="submit"][formmethod="get"] {
+    background: white;
+    color: #1d4ed8;
+}
+
+.caixa-login button[type="submit"][formmethod="get"]:hover {
+    background: #eff6ff;
+}
+
+.login-mensagem {
+    margin-top: 18px;
+    text-align: center;
+    color: #374151;
+}
+
+.voltar-inicio {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 22px;
+    color: #1d4ed8;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.voltar-inicio:hover {
+    text-decoration: underline;
+}
+
+.acoes-jogos {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px 24px;
 }
 
 .link-projeto:hover {
@@ -279,9 +386,6 @@ footer {
         gap: 10px 18px;
     }
 
-    .projetos-container {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
 }
 
 @media (max-width: 500px) {
@@ -389,6 +493,10 @@ footer {
     .projetos-container {
         grid-template-columns: 1fr;
         gap: 18px;
+    }
+
+    .caixa-login {
+        padding: 28px 22px;
     }
 
     .projeto-numero {

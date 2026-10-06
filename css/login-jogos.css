@@ -60,5 +60,11 @@ body {
 }
 
 .caixa-login-jogos a {
-    color: #333;
+    color: #1d4ed8;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.caixa-login-jogos a:hover {
+    text-decoration: underline;
 }

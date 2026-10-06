@@ -59,6 +59,6 @@ if ($_SERVER ["REQUEST_METHOD"] == "POST"){
 
     </div>
     <?php } ?>
-    <p><a href="../index.php">Voltar ao início</a></p>
+    <p class="voltar-inicio"><a href="../index.php">← Voltar ao início</a></p>
     </body>
     </html>

@@ -59,3 +59,22 @@ body {
     background: white;
     box-shadow: 0 6px 18px #00000012;
 }
+
+.voltar-inicio {
+    margin-top: 22px;
+}
+
+.voltar-inicio a {
+    display: inline-block;
+    padding: 10px 16px;
+    border: 1px solid #2563eb;
+    border-radius: 8px;
+    background: white;
+    color: #1d4ed8;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.voltar-inicio a:hover {
+    background: #eff6ff;
+}
