@@ -82,6 +82,12 @@ body {
     text-decoration: none;
 }
 
-.caixa-login-jogos a:hover {
+.caixa-login-jogos a:hover,
+.caixa-login-jogos a:focus-visible {
     background: #dbeafe;
+    transform: translateY(-1px);
+}
+
+.caixa-login-jogos a:active {
+    transform: translateY(0);
 }

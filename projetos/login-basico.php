@@ -36,7 +36,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" || $_SERVER["REQUEST_METHOD"] === "GET
             <input id="senha" type="password" name="senha" required>
 
             <button type="submit">Entrar</button>
-            <button class="botao-secundario" type="submit" formmethod="get">Testar com GET</button>
         </form>
 
         <?php if ($mensagem !== "") { ?>

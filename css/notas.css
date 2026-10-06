@@ -83,6 +83,7 @@ body {
 
 .voltar-inicio {
     margin-top: 22px;
+    text-align: center;
 }
 
 .voltar-inicio a {
@@ -98,8 +99,14 @@ body {
     transition: background-color 0.2s, border-color 0.2s, transform 0.2s;
 }
 
-.voltar-inicio a:hover {
+.voltar-inicio a:hover,
+.voltar-inicio a:focus-visible {
     background: #dbeafe;
     border-color: #bfdbfe;
     transform: translateY(-1px);
+    outline: none;
+}
+
+.voltar-inicio a:active {
+    transform: translateY(0);
 }

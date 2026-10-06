@@ -334,10 +334,16 @@ header {
     transition: background-color 0.2s, border-color 0.2s, transform 0.2s;
 }
 
-.voltar-inicio:hover {
+.voltar-inicio:hover,
+.voltar-inicio:focus-visible {
     background: #dbeafe;
     border-color: #bfdbfe;
     transform: translateY(-1px);
+    outline: none;
+}
+
+.voltar-inicio:active {
+    transform: translateY(0);
 }
 
 .pagina-jogos > h1,
@@ -422,6 +428,7 @@ header {
     justify-content: center;
     flex-wrap: wrap;
     gap: 12px 24px;
+    text-align: center;
 }
 
 .link-projeto:hover {
