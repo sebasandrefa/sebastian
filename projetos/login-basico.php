@@ -22,11 +22,11 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" || $_SERVER["REQUEST_METHOD"] === "GET
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/index.css">
+    <link rel="stylesheet" href="/css/login-jogos.css">
     <title>Login</title>
 </head>
-<body class="pagina-login">
-    <div class="caixa-login">
+<body class="pagina-login-jogos">
+    <main class="caixa-login-jogos">
         <h1>Login</h1>
         <form method="post">
             <label for="usuario">Usuário:</label>
@@ -36,14 +36,14 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" || $_SERVER["REQUEST_METHOD"] === "GET
             <input id="senha" type="password" name="senha" required>
 
             <button type="submit">Entrar</button>
-            <button type="submit" formmethod="get">Testar com GET</button>
+            <button class="botao-secundario" type="submit" formmethod="get">Testar com GET</button>
         </form>
 
         <?php if ($mensagem !== "") { ?>
             <p class="login-mensagem" role="status"><?= htmlspecialchars($mensagem, ENT_QUOTES, "UTF-8") ?></p>
         <?php } ?>
-        <a class="voltar-inicio" href="../index.php">← Voltar ao início</a>
-    </div>
+        <p><a class="voltar-inicio" href="../index.php">← Voltar ao início</a></p>
+    </main>
 </body>
 </html>
 <?php

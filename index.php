@@ -56,7 +56,7 @@
         </div>
     </section>
     <section id="sobre" class="secao">
-        <h2 class="titulo-secao">sobre mim</h2>
+        <h2 class="titulo-secao"> Sobre mim </h2>
         <div class="sobre-conteudo">
             <h3>Quem sou eu?</h3>
             <p>

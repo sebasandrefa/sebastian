@@ -59,12 +59,29 @@ body {
     background: #444;
 }
 
+.caixa-login-jogos .botao-secundario {
+    margin-top: 0;
+    border: 1px solid #2563eb;
+    background: white;
+    color: #1d4ed8;
+}
+
+.caixa-login-jogos .botao-secundario:hover {
+    background: #eff6ff;
+}
+
 .caixa-login-jogos a {
+    display: inline-flex;
+    margin-top: 10px;
+    padding: 9px 13px;
+    border: 1px solid #dbeafe;
+    border-radius: 8px;
+    background: #eff6ff;
     color: #1d4ed8;
     font-weight: 700;
     text-decoration: none;
 }
 
 .caixa-login-jogos a:hover {
-    text-decoration: underline;
+    background: #dbeafe;
 }
