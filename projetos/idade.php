@@ -1,21 +1,12 @@
 <?php
 
-$nome = "";
-
-$idade = 0;
-
-$mostrar = "";
+$resultado = "";
 
 if ($_SERVER ["REQUEST_METHOD"] == "POST"){
-    
-    $nome = $_POST["nome"];
-    $idade = $_POST["idade"];
-    
-    if ($idade >=18){
-        $mostrar = " De Maior";
-    }
-    else {
-        $mostrar = "De Menor";
+    $idade = filter_input(INPUT_POST, "idade", FILTER_VALIDATE_INT);
+
+    if ($idade !== false && $idade !== null && $idade >= 0) {
+        $resultado = $idade >= 18 ? "Maior de idade" : "Menor de idade";
     }
 }
 ?>
@@ -33,30 +24,14 @@ if ($_SERVER ["REQUEST_METHOD"] == "POST"){
 <h1>Verificador de idade</h1>
 
 <form method="POST" class="formulario-idade">
-
-    <input type="text" id="nome" name="nome" placeholder="Digite seu Nome" required>
-
-    <input type="number" id="idade"  name="idade" placeholder="Digite sua idade" required>
-
+    <label for="idade">Sua idade</label>
+    <input type="number" id="idade" name="idade" min="0" step="1" placeholder="Digite sua idade" required>
     <input type="submit" value="Enviar">
-    </form>
+</form>
 
-    <?php if ($nome != "") { ?>
-    <div class="card">
-
-        
-        <h1>Mostrando Nome, Idade</h1><br>
-        
-    
-    <?php if ($mostrar != "") { ?>
-        
-        <h2>O <?= htmlspecialchars($nome, ENT_QUOTES, "UTF-8") ?> é <?= $mostrar ?></h2>
-        
-        <?php } ?>
-        
-        <p>Idade: <?= (int) $idade ?> anos</p>
-        <p>De acordo com a idade, eu sou <?= $mostrar ?></p><br>
-
+    <?php if ($resultado !== "") { ?>
+    <div class="card" role="status" aria-live="polite">
+        <h2 class="resultado-idade"><?= htmlspecialchars($resultado, ENT_QUOTES, "UTF-8") ?></h2>
     </div>
     <?php } ?>
     <p class="voltar-inicio"><a href="../index.php">← Voltar ao início</a></p>
