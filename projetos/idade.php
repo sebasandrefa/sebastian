@@ -24,6 +24,8 @@ if ($_SERVER ["REQUEST_METHOD"] == "POST"){
 <h1>Verificador de idade</h1>
 
 <form method="POST" class="formulario-idade">
+    <label for="nome">Seu nome</label>
+    <input type="text" id="nome" name="nome" maxlength="100" placeholder="Digite seu nome" required>
     <label for="idade">Sua idade</label>
     <input type="number" id="idade" name="idade" min="0" step="1" placeholder="Digite sua idade" required>
     <input type="submit" value="Enviar">
