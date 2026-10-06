@@ -233,7 +233,7 @@ header {
     padding: 30px 24px;
     text-align: center;
     border-radius: 10px;
-    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.10);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.10);
 }
 
 .contato-item h3 {
@@ -242,9 +242,6 @@ header {
     margin-bottom: 10px;
 }
 
-.contato-item p {
-    overflow-wrap: anywhere;
-}
 
 .footer {
     background-color: #111827;
@@ -253,4 +250,5 @@ header {
     padding: 30px;
 }
 
-.
+@media (max-width: 800px) {
+}
