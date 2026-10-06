@@ -164,7 +164,8 @@
                     <a href="/projetos/jogos.php" class="link-projeto">
                         Ver projeto →
                     </a>
-                     <div class="projeto-card">
+                </div>
+                <div class="projeto-card">
                     <div class="projeto-numero">
                         04
                     </div>
