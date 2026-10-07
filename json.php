@@ -1,6 +1,7 @@
 <?php
+
     // 1. DECLARAR O CAMINHO DO ARQUIVO JSON
-    $caminho = __DIR__ . "/dados.json";
+    $caminho = __DIR__. "/dados.json";
 
     // 2. ABRIR/LER O ARQUIVO JSON
     $json = file_get_contents($caminho);
@@ -8,59 +9,98 @@
     // 3. TRANSFORMAR JSON EM ARRAY PHP
     $alunos = json_decode($json, true);
 
-    // 4. CRIAR UM ALUNO
-    $novoAluno = [
-        "nome" => "Sebastian",
-        "idade" => 19,
-        "curso" => "Desenvolvimento em Sistemas"
-    ];
+    if ($_SERVER["REQUEST_METHOD"]){
 
-    // 5. ADICIONAR O ALUNO NO ARRAY
-    $alunos[] = $novoAluno;
+        $acao = $_POST["acao"];
+        
+        if($acao === "cadastrar"){
 
-    // 6. TRANSFORMAR ARRAY PHP EM JSON
-    $jsonAtualizado = json_encode($alunos,
-        JSON_PRETTY_PRINT  |  JSON_UNESCAPED_UNICODE 
-    );
+        // 4. CRIAR UM ALUNO
+        $novoAluno = [
+            "nome" => $_POST["nome"],
+            "idade" => $_POST["idade"],
+            "curso" => $_POST["curso"]
+        ];
 
-    // 7. SALVAR NO ARQUIVO
-    file_put_contents($caminho,
-    $jsonAtualizado);
+        // 5. ADICIONAR O ALUNO NO ARRAY
+        $alunos[] = $novoAluno;
 
-    echo "DADOS REGISTRADOS EM dados.json";
+        // 6. TRANSFORMAR ARRAY PHP EM JSON
+        $jsonAtualizado = json_encode($alunos,
+            JSON_PRETTY_PRINT | 
+            JSON_UNESCAPED_UNICODE
+        );
+
+        // 7. SALVAR NO ARQUIVO
+        file_put_contents($caminho, 
+        $jsonAtualizado);
+
+    }
+        // PEGAR OS DADOS DO FORMULÁRIO
+        if($acao === "atualizar"){
+        $nome = $_POST["nome"];
+        $novaIdade = $_POST["idade"];
+        $novoCurso = $_POST["curso"];
+
+        // 5. PERCORRER TODOS OS ALUNOS
+        foreach($alunos as $posicao => $aluno){
+            if($aluno["nome"] === $nome){
+                $alunos[$posicao]["idade"] = $novaIdade;
+                $alunos[$posicao]["curso"] = $novoCurso;
+            }
+        }
+
+        // TRANSFORMAR ARRAY PHP EM JSON
+        $jsonAtualizado = json_encode($alunos,
+        JSON_PRETTY_PRINT |  JSON_UNESCAPED_UNICODE
+        );
+
+        //  SALVAR NO ARQUIVO
+        file_put_contents($caminho, 
+        $jsonAtualizado);
+    }
+}
 
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" 
-    content="width=device-width, 
-    initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
 <body>
+    <h2>CADASTRAR ALUNOS</h2>
     <form method="POST">
-        <label>Nome:</label>
+        <label for>Nome:</label>
         <input type="text" name="nome">
 
-        <label>Idade:</label>
+        <label for>Idade:</label>
         <input type="number" name="idade">
 
-        <label>Curso:</label>
+        <label for>Curso:</label>
         <input type="text" name="curso">
-
-        <button type="submit">Cadastrar</button>
+        <button type="submit" name ="acao" value="cadastrar">Cadastrar</button>
     </form>
 
-    <h2>ALUNOS CADASTROS:</h2>
-    <?php foreach ($alunos as $aluno) { ?>
-        <h3><?= $aluno["nome"] ?></h3>
-        <p>
-            Idade: <?= $aluno["idade"] ?> <br>
+    <h2>ALUNOS CADASTRADOS</h2>
+    <?php foreach($alunos as $aluno){ ?>
+    <h3><?= $aluno["nome"] ?></h3>
+    <p>Idade: <?= $aluno["idade"] ?></p>
+    <p>Curso: <?= $aluno["curso"] ?></p>
+    <?php } ?>
 
-            Curso: <?= $aluno["curso"]?> <br>
-        <?php } ?> </p>
+    <form method="POST">
+        <label for>Nome:</label>
+        <input type="text" name="nome">
+
+        <label for>Idade:</label>
+        <input type="number" name="idade">
+
+        <label for>Curso:</label>
+        <input type="text" name="curso">
+        <button type="submit" name ="acao" value="atualizar">Atualizar</button>
+    </form>
 
 </body>
 </html>
