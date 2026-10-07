@@ -58,6 +58,7 @@
         <h3><?= $aluno["nome"] ?></h3>
         <p>
             Idade: <?= $aluno["idade"] ?> <br>
+        <p></p>
             Curso: <?= $aluno["curso"]?> <br>
         <?php } ?> </p>
 
