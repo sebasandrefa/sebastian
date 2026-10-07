@@ -17,7 +17,7 @@ body {
     line-height: 1.6;
 }
 header {
-    background-color: #111827;
+    background-color: #075985;
     position: sticky;
     top: 0;
     z-index: 100;
@@ -46,7 +46,7 @@ header {
 }
 .menu a:hover,
 .menu a:focus-visible {
-    color: #60a5fa;
+    color: #fbbf24;
 }
 .inicio {
     min-height: 85vh;
