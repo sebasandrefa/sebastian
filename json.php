@@ -58,6 +58,9 @@
         //  SALVAR NO ARQUIVO
         file_put_contents($caminho, 
         $jsonAtualizado);
+        }
+
+        if ($acao === "deletar") {
     }
 }
 
