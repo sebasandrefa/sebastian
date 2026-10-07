@@ -40,34 +40,13 @@
 
     }
         // PEGAR OS DADOS DO FORMULÁRIO
-        if($acao === "atualizar"){
-        $nome = $_POST["nome"];
-        $novaIdade = $_POST["idade"];
-        $novoCurso = $_POST["curso"];
-
-        // 5. PERCORRER TODOS OS ALUNOS
-        foreach($alunos as $posicao => $aluno){
-            if($aluno["nome"] === $nome){
-                $alunos[$posicao]["idade"] = $novaIdade;
-                $alunos[$posicao]["curso"] = $novoCurso;
-            }
-        }
-
-        // TRANSFORMAR ARRAY PHP EM JSON
-        $jsonAtualizado = json_encode($alunos,
-        JSON_PRETTY_PRINT |  JSON_UNESCAPED_UNICODE
-        );
-
-        //  SALVAR NO ARQUIVO
-        file_put_contents($caminho, 
-        $jsonAtualizado);
-        }
-
-        if ($acao === "deletar" && isset($_POST["posicao"])) {
+        if ($acao === "atualizar" && isset($_POST["posicao"])) {
             $posicao = filter_var($_POST["posicao"], FILTER_VALIDATE_INT);
 
             if ($posicao !== false && isset($alunos[$posicao])) {
-                array_splice($alunos, $posicao, 1);
+                $alunos[$posicao]["nome"] = trim($_POST["nome"] ?? "");
+                $alunos[$posicao]["idade"] = trim($_POST["idade"] ?? "");
+                $alunos[$posicao]["curso"] = trim($_POST["curso"] ?? "");
 
                 $jsonAtualizado = json_encode(
                     $alunos,
@@ -77,6 +56,24 @@
                 file_put_contents($caminho, $jsonAtualizado, LOCK_EX);
             }
         }
+
+        if ($acao === "deletar") {
+            // PEGAR O NOME QUE QUEREMOS DELETAR
+            $nome = $_POST["nome"] ?? "";
+
+            // PERCORRER TODOS OS ALUNOS
+            foreach ($alunos as $posicao => $aluno) {
+
+            // VERIFICAR SE ENCONTROU O ALUNO
+            if ($aluno["nome"] === $nome) {
+                
+            // DELETAR O ALUNO DO ARRAY
+            unset($alunos[$posicao]);
+                }
+            }
+
+        }
+
     }
 
 ?>
@@ -103,26 +100,27 @@
 
     <h2>ALUNOS CADASTRADOS</h2>
     <?php foreach($alunos as $posicao => $aluno){ ?>
-    <h3><?= $aluno["nome"] ?></h3>
-    <p>Idade: <?= $aluno["idade"] ?></p>
-    <p>Curso: <?= $aluno["curso"] ?></p>
+    <h3><?= htmlspecialchars($aluno["nome"], ENT_QUOTES, "UTF-8") ?></h3>
+    <p>Idade: <?= htmlspecialchars((string) $aluno["idade"], ENT_QUOTES, "UTF-8") ?></p>
+    <p>Curso: <?= htmlspecialchars($aluno["curso"], ENT_QUOTES, "UTF-8") ?></p>
     <form method="POST">
-        <input type="hidden" name="posicao" value="<?= $posicao ?>">
+        <input type="hidden" name="nome" value="<?= htmlspecialchars($aluno["nome"], ENT_QUOTES, "UTF-8") ?>">
         <button type="submit" name="acao" value="deletar">Excluir</button>
     </form>
-    <?php } ?>
-
     <form method="POST">
-        <label for>Nome:</label>
-        <input type="text" name="nome">
-
-        <label for>Idade:</label>
-        <input type="number" name="idade">
-
-        <label for>Curso:</label>
-        <input type="text" name="curso">
-        <button type="submit" name ="acao" value="atualizar">Atualizar</button>
+        <input type="hidden" name="posicao" value="<?= $posicao ?>">
+        <label>Nome:
+            <input type="text" name="nome" value="<?= htmlspecialchars($aluno["nome"], ENT_QUOTES, "UTF-8") ?>" required>
+        </label>
+        <label>Idade:
+            <input type="number" name="idade" value="<?= htmlspecialchars((string) $aluno["idade"], ENT_QUOTES, "UTF-8") ?>" required>
+        </label>
+        <label>Curso:
+            <input type="text" name="curso" value="<?= htmlspecialchars($aluno["curso"], ENT_QUOTES, "UTF-8") ?>" required>
+        </label>
+        <button type="submit" name="acao" value="atualizar">Atualizar</button>
     </form>
+    <?php } ?>
 
 </body>
 </html>
