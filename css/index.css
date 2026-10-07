@@ -561,7 +561,7 @@ section[id]:target .inicio-conteudo h1 {
 
 
 footer {
-    background-color: #111827;
+    background: linear-gradient(120deg, #111827 0%, #172554 55%, #1e3a8a 100%);
     color: #cccccc;
     text-align: center;
     padding: 30px;
