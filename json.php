@@ -8,10 +8,13 @@
 
     // 3. TRANSFORMAR JSON EM ARRAY PHP
     $alunos = json_decode($json, true);
+    if (!is_array($alunos)) {
+        $alunos = [];
+    }
 
-    if ($_SERVER["REQUEST_METHOD"]){
+    if ($_SERVER["REQUEST_METHOD"] === "POST"){
 
-        $acao = $_POST["acao"];
+        $acao = $_POST["acao"] ?? "";
         
         if($acao === "cadastrar"){
 
@@ -60,9 +63,21 @@
         $jsonAtualizado);
         }
 
-        if ($acao === "deletar") {
+        if ($acao === "deletar" && isset($_POST["posicao"])) {
+            $posicao = filter_var($_POST["posicao"], FILTER_VALIDATE_INT);
+
+            if ($posicao !== false && isset($alunos[$posicao])) {
+                array_splice($alunos, $posicao, 1);
+
+                $jsonAtualizado = json_encode(
+                    $alunos,
+                    JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE
+                );
+
+                file_put_contents($caminho, $jsonAtualizado, LOCK_EX);
+            }
+        }
     }
-}
 
 ?>
 <!DOCTYPE html>
@@ -87,10 +102,14 @@
     </form>
 
     <h2>ALUNOS CADASTRADOS</h2>
-    <?php foreach($alunos as $aluno){ ?>
+    <?php foreach($alunos as $posicao => $aluno){ ?>
     <h3><?= $aluno["nome"] ?></h3>
     <p>Idade: <?= $aluno["idade"] ?></p>
     <p>Curso: <?= $aluno["curso"] ?></p>
+    <form method="POST">
+        <input type="hidden" name="posicao" value="<?= $posicao ?>">
+        <button type="submit" name="acao" value="deletar">Excluir</button>
+    </form>
     <?php } ?>
 
     <form method="POST">
