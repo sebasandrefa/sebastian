@@ -562,21 +562,26 @@ section[id]:target .inicio-conteudo h1 {
 
 footer {
     background: linear-gradient(120deg, #111827 0%, #172554 55%, #1e3a8a 100%);
-    color: #cccccc;
+    color: #dbeafe;
     text-align: center;
-    padding: 30px;
+    padding: 34px 20px;
+    border-top: 1px solid rgba(191, 219, 254, 0.2);
+    box-shadow: 0 -8px 24px rgba(17, 24, 39, 0.08);
+    font-size: 15px;
+    letter-spacing: 0.02em;
 }
 
 footer a {
-    color: #60a5fa;
+    color: #93c5fd;
     text-decoration: none;
-    transition: color 0.2s ease;
+    font-weight: 700;
+    transition: color 0.2s ease, text-shadow 0.2s ease;
 }
 
 footer a:hover,
 footer a:focus-visible {
-    color: #93c5fd;
-    text-decoration: underline;
+    color: #ffffff;
+    text-shadow: 0 0 12px rgba(147, 197, 253, 0.65);
 }
 
 :where(a, button, input):focus-visible {
