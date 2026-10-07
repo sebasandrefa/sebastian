@@ -12,7 +12,7 @@
     $novoAluno = [
         "nome" => "Sebastian",
         "idade" => 19,
-        "curso" => "Dsenvolvimento em Sistemas"
+        "curso" => "Desenvolvimento em Sistemas"
     ];
 
     // 5. ADICIONAR O ALUNO NO ARRAY
@@ -20,8 +20,7 @@
 
     // 6. TRANSFORMAR ARRAY PHP EM JSON
     $jsonAtualizado = json_encode($alunos,
-        JSON_PRETTY_PRINT  |
-        JSON_UNESCAPED_UNICODE 
+        JSON_PRETTY_PRINT  |  JSON_UNESCAPED_UNICODE 
     );
 
     // 7. SALVAR NO ARQUIVO
@@ -41,6 +40,19 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <form method="POST">
+        <label>Nome:</label>
+        <input type="text" name="nome">
+
+        <label>Idade:</label>
+        <input type="number" name="idade">
+
+        <label>Curso:</label>
+        <input type="text" name="curso">
+
+        <button type="submit">Cadastrar</button>
+    </form>
+
+
 </body>
 </html>
