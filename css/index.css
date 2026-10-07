@@ -95,7 +95,7 @@ section[id]:target .inicio-conteudo h1 {
     min-height: 85vh;
     display: flex;
     align-items: center;
-    background-color: #111827;
+    background: linear-gradient(120deg, #111827 0%, #172554 55%, #1e3a8a 100%);
     color: white;
 }
 .inicio-conteudo {
