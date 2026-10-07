@@ -17,10 +17,11 @@ body {
     line-height: 1.6;
 }
 header {
-    background-color: #075985;
+    background-color: #111827;
     position: sticky;
     top: 0;
     z-index: 100;
+    box-shadow: 0 4px 18px rgba(17, 24, 39, 0.16);
 }
 .navbar {
     max-width: 1100px;
@@ -40,13 +41,55 @@ header {
 }
 
 .menu a {
+    position: relative;
+    display: inline-block;
     color: #dddddd;
     text-decoration: none;
-    transition: color 0.2s ease;
+    transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.menu a::after {
+    position: absolute;
+    right: 0;
+    bottom: -5px;
+    left: 0;
+    height: 2px;
+    border-radius: 2px;
+    background: #60a5fa;
+    content: "";
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.2s ease;
 }
 .menu a:hover,
 .menu a:focus-visible {
-    color: #fbbf24;
+    color: #60a5fa;
+    transform: translateY(-2px);
+}
+
+.menu a:hover::after,
+.menu a:focus-visible::after {
+    transform: scaleX(1);
+}
+
+section[id] {
+    scroll-margin-top: 90px;
+}
+
+section[id]:target .titulo-secao,
+section[id]:target .inicio-conteudo h1 {
+    animation: destaque-secao 0.7s ease both;
+}
+
+@keyframes destaque-secao {
+    from {
+        opacity: 0.65;
+        transform: translateY(8px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 .inicio {
     min-height: 85vh;
@@ -93,6 +136,12 @@ header {
     transform: translateY(-2px);
     box-shadow: 0 6px 14px rgba(37, 99, 235, 0.24);
 }
+
+.botao:active,
+.caixa-login button:active,
+.formulario-jogos button:active {
+    transform: translateY(1px) scale(0.98);
+}
 .secao {
     max-width: 1100px;
     margin: auto;
@@ -130,6 +179,13 @@ header {
     border-radius: 10px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
     color: #4b5563;
+    transition: transform 0.22s ease, box-shadow 0.22s ease, background-color 0.22s ease;
+}
+
+.sobre-conteudo p:hover {
+    transform: translateY(-4px);
+    background-color: #ffffff;
+    box-shadow: 0 10px 22px rgba(17, 24, 39, 0.12);
 }
 .foto {
     width: 200px;
@@ -210,6 +266,11 @@ header {
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
 
+.projeto-card:focus-within {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
 .projeto-numero {
     font-size: 35px;
     font-weight: bold;
@@ -241,6 +302,13 @@ header {
     border-radius: 5px;
     font-size: 13px;
     font-weight: bold;
+    transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+
+.tecnologias span:hover {
+    background-color: #2563eb;
+    color: white;
+    transform: translateY(-2px);
 }
 
 .link-projeto {
@@ -476,6 +544,11 @@ header {
 }
 
 .contato-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.13);
+}
+
+.contato-item:focus-within {
     transform: translateY(-3px);
     box-shadow: 0 6px 14px rgba(0, 0, 0, 0.13);
 }
