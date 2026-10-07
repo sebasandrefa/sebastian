@@ -55,9 +55,9 @@
 
     <h2>ALUNOS CADASTROS:</h2>
     <?php foreach ($alunos as $aluno) { ?>
-        <h3><?php echo $aluno["nome"]; ?></h3>
+        <h3><?= $aluno["nome"] ?></h3>
         <p>
-            Idade: <? $aluno["idade"] ?> <br>
+            Idade: <?= $aluno["idade"] ?> <br>
             Curso: <?= $aluno["curso"]?> <br>
         <?php } ?> </p>
 
