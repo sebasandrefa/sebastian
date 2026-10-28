@@ -16,6 +16,7 @@ $rotasProjeto = [
     'notas',
     'notas-GET',
     'notas-desafio',
+    'poo2',
     'teste-post',
     'api/api-teste',
 ];

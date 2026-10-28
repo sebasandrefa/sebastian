@@ -14,6 +14,7 @@ class ProjetoController
         'notas' => 'notas.php',
         'notas-GET' => 'notas-GET.php',
         'notas-desafio' => 'notas-desafio.php',
+        'poo2' => 'poo2.php',
         'teste-post' => 'teste-post.php',
         'api/api-teste' => 'api/api-teste.php',
     ];
