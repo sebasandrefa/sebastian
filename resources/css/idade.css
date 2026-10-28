@@ -53,14 +53,15 @@ body {
 
 .formulario-idade input[type="submit"] {
     border: 0;
-    background: #222;
+    background: #2563eb;
     color: white;
+    font-weight: 700;
     cursor: pointer;
     transition: background-color 0.2s ease, transform 0.2s ease;
 }
 
 .formulario-idade input[type="submit"]:hover {
-    background: #444;
+    background: #1d4ed8;
     transform: translateY(-1px);
 }
 

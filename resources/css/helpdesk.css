@@ -191,12 +191,12 @@ td button {
 }
 
 td form:last-child button {
-    border-color: #b91c1c;
-    background: #b91c1c;
+    border-color: #2563eb;
+    background: #2563eb;
 }
 
 td form:last-child button:hover {
-    background: #991b1b;
+    background: #1d4ed8;
 }
 
 body > div {

@@ -55,14 +55,15 @@ a {
 .formulario-notas button,
 .formulario-notas input[type="submit"] {
     border: 0;
-    background: #222;
+    background: #2563eb;
     color: white;
+    font-weight: 700;
     cursor: pointer;
 }
 
 .formulario-notas button:hover,
 .formulario-notas input[type="submit"]:hover {
-    background: #444;
+    background: #1d4ed8;
 }
 
 .card-resultado {
