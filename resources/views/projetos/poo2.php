@@ -102,13 +102,18 @@ if ($_SERVER["REQUEST_METHOD"] === "POST"){
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Produçao Industrial</title>
+        <link rel="stylesheet" href="/resources/css/poo2.css?v=1">
+        <title>Produção Industrial</title>
     </head>
-    <body>
-        
+    <body class="pagina-poo2">
+        <main class="painel-producao">
+        <header class="cabecalho-producao">
+            <span class="etiqueta-projeto">Projeto 06 · Programação Orientada a Objetos</span>
         <h1>Controle de Produção Industrial</h1>
+            <p>Cadastre máquinas e acompanhe a produção registrada em cada equipamento.</p>
+        </header>
 
-        <form method="POST">
+        <form method="POST" class="formulario-maquina">
             <label for="nome">Nome da Máquina:</label>
             <input type="text" name="nome" id="nome" required>
 
@@ -127,11 +132,18 @@ if ($_SERVER["REQUEST_METHOD"] === "POST"){
             </form>
 
             <?php if ($mensagem): ?>
-            <p><?php echo escapar($mensagem); ?></p>
+            <p class="mensagem-maquina" role="status"><?php echo escapar($mensagem); ?></p>
             <?php endif; ?>
 
-            <h2>Máquinas Cadastradas</h2>
-            <ul>
+        <section class="secao-maquinas" aria-labelledby="titulo-maquinas">
+            <div class="titulo-lista">
+                <div>
+                    <span class="etiqueta-projeto">Painel de produção</span>
+                    <h2 id="titulo-maquinas">Máquinas cadastradas</h2>
+                </div>
+                <span class="contador-maquinas"><?php echo count($_SESSION["máquinas"]); ?> cadastrada(s)</span>
+            </div>
+            <ul class="lista-maquinas">
                 
             <?php foreach ($_SESSION["máquinas"] as $maquina): ?>
                 <li>
@@ -141,5 +153,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST"){
                 </li>
             <?php endforeach; ?>
         </ul>
+        </section>
+        <a class="voltar-inicio" href="/?rota=portfolio">← Voltar ao portfólio</a>
+        </main>
 
-?>

@@ -1,0 +1,259 @@
+* {
+    box-sizing: border-box;
+}
+
+::selection {
+    color: #111827;
+    background: #dbeafe;
+}
+
+body.pagina-poo2 {
+    min-height: 100vh;
+    margin: 0;
+    padding: 56px 20px;
+    background: #f3f4f6;
+    color: #1f2937;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.6;
+}
+
+.painel-producao {
+    width: min(100%, 960px);
+    margin: 0 auto;
+    padding: clamp(24px, 5vw, 48px);
+    border: 1px solid #e5e7eb;
+    border-radius: 18px;
+    background: #fff;
+    box-shadow: 0 18px 48px rgba(17, 24, 39, 0.1);
+}
+
+.cabecalho-producao {
+    margin-bottom: 32px;
+}
+
+.etiqueta-projeto {
+    display: inline-block;
+    color: #2563eb;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+}
+
+.cabecalho-producao h1 {
+    margin: 8px 0 6px;
+    color: #111827;
+    font-size: clamp(30px, 5vw, 42px);
+    line-height: 1.15;
+}
+
+.cabecalho-producao p {
+    max-width: 620px;
+    margin: 0;
+    color: #6b7280;
+}
+
+.formulario-maquina {
+    display: grid;
+    grid-template-columns: minmax(160px, 0.7fr) minmax(0, 1.3fr);
+    align-items: center;
+    gap: 12px 18px;
+    padding: 24px;
+    border: 1px solid #e5e7eb;
+    border-radius: 14px;
+    background: #f9fafb;
+}
+
+.formulario-maquina label {
+    color: #374151;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.formulario-maquina input,
+.formulario-maquina select {
+    width: 100%;
+    min-height: 46px;
+    padding: 10px 12px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    background: #fff;
+    color: #1f2937;
+    font: inherit;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.formulario-maquina input:focus,
+.formulario-maquina select:focus {
+    border-color: #2563eb;
+    outline: 3px solid #bfdbfe;
+}
+
+.formulario-maquina button {
+    grid-column: 1 / -1;
+    min-height: 48px;
+    margin-top: 4px;
+    padding: 11px 18px;
+    border: 1px solid #2563eb;
+    border-radius: 8px;
+    background: #2563eb;
+    color: #fff;
+    font: inherit;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.formulario-maquina button:hover {
+    transform: translateY(-1px);
+    background: #1d4ed8;
+    box-shadow: 0 6px 14px rgba(37, 99, 235, 0.22);
+}
+
+.formulario-maquina button:active {
+    transform: translateY(0);
+}
+
+.mensagem-maquina {
+    margin: 18px 0 0;
+    padding: 12px 16px;
+    border: 1px solid #bfdbfe;
+    border-radius: 8px;
+    background: #eff6ff;
+    color: #1e40af;
+    font-weight: 600;
+}
+
+.secao-maquinas {
+    margin-top: 36px;
+}
+
+.titulo-lista {
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    gap: 16px;
+    margin-bottom: 16px;
+}
+
+.titulo-lista h2 {
+    margin: 3px 0 0;
+    color: #111827;
+    font-size: 24px;
+}
+
+.contador-maquinas {
+    padding: 6px 11px;
+    border-radius: 999px;
+    background: #eff6ff;
+    color: #1d4ed8;
+    font-size: 13px;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.lista-maquinas {
+    display: grid;
+    gap: 12px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.lista-maquinas li {
+    position: relative;
+    padding: 18px 20px 18px 52px;
+    border: 1px solid #e5e7eb;
+    border-radius: 11px;
+    background: #fff;
+    color: #4b5563;
+    box-shadow: 0 3px 10px rgba(17, 24, 39, 0.04);
+}
+
+.lista-maquinas li::before {
+    position: absolute;
+    top: 50%;
+    left: 19px;
+    width: 18px;
+    height: 18px;
+    border-radius: 6px;
+    background: #dbeafe;
+    content: "";
+    transform: translateY(-50%);
+}
+
+.lista-maquinas:empty::after {
+    display: block;
+    padding: 22px;
+    border: 1px dashed #d1d5db;
+    border-radius: 11px;
+    color: #6b7280;
+    content: "Nenhuma máquina cadastrada ainda. Use o formulário acima para começar.";
+    text-align: center;
+}
+
+.voltar-inicio {
+    display: inline-flex;
+    align-items: center;
+    margin-top: 28px;
+    padding: 10px 15px;
+    border: 1px solid #dbeafe;
+    border-radius: 8px;
+    background: #eff6ff;
+    color: #1d4ed8;
+    font-weight: 700;
+    text-decoration: none;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.voltar-inicio:hover,
+.voltar-inicio:focus-visible {
+    transform: translateY(-1px);
+    background: #dbeafe;
+}
+
+:where(a, button, input, select):focus-visible {
+    outline: 3px solid #60a5fa;
+    outline-offset: 3px;
+}
+
+@media (max-width: 600px) {
+    body.pagina-poo2 {
+        padding: 22px 12px;
+    }
+
+    .painel-producao {
+        padding: 24px 18px;
+        border-radius: 14px;
+    }
+
+    .formulario-maquina {
+        grid-template-columns: 1fr;
+        gap: 7px;
+        padding: 18px;
+    }
+
+    .formulario-maquina label:not(:first-child) {
+        margin-top: 8px;
+    }
+
+    .formulario-maquina button {
+        grid-column: 1;
+        margin-top: 10px;
+    }
+
+    .titulo-lista {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+    }
+}
