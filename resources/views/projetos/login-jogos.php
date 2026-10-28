@@ -29,7 +29,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/resources/css/login-jogos.css">
+    <link rel="stylesheet" href="/resources/css/login-jogos.css?v=2">
     <title>Login para jogos</title>
 </head>
 <body class="pagina-login-jogos">
