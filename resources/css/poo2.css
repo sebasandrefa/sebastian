@@ -10,7 +10,7 @@
 body.pagina-poo2 {
     min-height: 100vh;
     margin: 0;
-    padding: 56px 20px;
+    padding: 36px 20px;
     background: #f3f4f6;
     color: #1f2937;
     font-family: Arial, Helvetica, sans-serif;
@@ -18,9 +18,9 @@ body.pagina-poo2 {
 }
 
 .painel-producao {
-    width: min(100%, 960px);
+    width: min(100%, 820px);
     margin: 0 auto;
-    padding: clamp(24px, 5vw, 48px);
+    padding: clamp(22px, 4vw, 36px);
     border: 1px solid #e5e7eb;
     border-radius: 18px;
     background: #fff;
@@ -28,7 +28,7 @@ body.pagina-poo2 {
 }
 
 .cabecalho-producao {
-    margin-bottom: 32px;
+    margin-bottom: 24px;
 }
 
 .etiqueta-projeto {
@@ -43,7 +43,7 @@ body.pagina-poo2 {
 .cabecalho-producao h1 {
     margin: 8px 0 6px;
     color: #111827;
-    font-size: clamp(30px, 5vw, 42px);
+    font-size: clamp(27px, 4vw, 34px);
     line-height: 1.15;
 }
 
@@ -57,8 +57,8 @@ body.pagina-poo2 {
     display: grid;
     grid-template-columns: minmax(160px, 0.7fr) minmax(0, 1.3fr);
     align-items: center;
-    gap: 12px 18px;
-    padding: 24px;
+    gap: 9px 16px;
+    padding: 20px;
     border: 1px solid #e5e7eb;
     border-radius: 14px;
     background: #f9fafb;
@@ -73,8 +73,8 @@ body.pagina-poo2 {
 .formulario-maquina input,
 .formulario-maquina select {
     width: 100%;
-    min-height: 46px;
-    padding: 10px 12px;
+    min-height: 40px;
+    padding: 8px 11px;
     border: 1px solid #d1d5db;
     border-radius: 8px;
     background: #fff;
@@ -91,7 +91,7 @@ body.pagina-poo2 {
 
 .formulario-maquina button {
     grid-column: 1 / -1;
-    min-height: 48px;
+    min-height: 42px;
     margin-top: 4px;
     padding: 11px 18px;
     border: 1px solid #2563eb;
@@ -125,7 +125,7 @@ body.pagina-poo2 {
 }
 
 .secao-maquinas {
-    margin-top: 36px;
+    margin-top: 28px;
 }
 
 .titulo-lista {
@@ -162,7 +162,7 @@ body.pagina-poo2 {
 
 .lista-maquinas li {
     position: relative;
-    padding: 18px 20px 18px 52px;
+    padding: 14px 18px 14px 48px;
     border: 1px solid #e5e7eb;
     border-radius: 11px;
     background: #fff;
@@ -195,7 +195,7 @@ body.pagina-poo2 {
 .voltar-inicio {
     display: inline-flex;
     align-items: center;
-    margin-top: 28px;
+    margin-top: 22px;
     padding: 10px 15px;
     border: 1px solid #dbeafe;
     border-radius: 8px;
