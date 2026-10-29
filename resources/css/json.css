@@ -1,35 +1,222 @@
-* {
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap");
+
+:root {
+    --cor-primaria: #2563eb;
+    --cor-primaria-escura: #1d4ed8;
+    --cor-texto: #0f172a;
+    --cor-texto-suave: #475569;
+    --cor-texto-fraco: #64748b;
+    --cor-borda: #e2e8f0;
+    --cor-fundo: #f8fafc;
+    --raio-sm: 8px;
+    --raio-lg: 16px;
+    --sombra-sm: 0 1px 2px rgba(15, 23, 42, 0.06), 0 1px 3px rgba(15, 23, 42, 0.08);
+    --sombra: 0 4px 6px -1px rgba(15, 23, 42, 0.06), 0 10px 24px -6px rgba(15, 23, 42, 0.10);
+    --transicao: 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+*,
+*::before,
+*::after {
     box-sizing: border-box;
 }
 
+::selection {
+    background: #dbeafe;
+    color: var(--cor-texto);
+}
+
+html {
+    background:
+        radial-gradient(circle at 15% 0%, rgba(37, 99, 235, 0.08), transparent 40%),
+        var(--cor-fundo);
+    min-height: 100%;
+}
+
 .pagina-json {
-    max-width: 900px;
+    max-width: 820px;
     margin: 0 auto;
-    padding: 32px 20px;
-    color: #1f2937;
-    font-family: Arial, Helvetica, sans-serif;
-    line-height: 1.5;
+    padding: 48px 20px 64px;
+    color: var(--cor-texto);
+    font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+}
+
+.pagina-json h2 {
+    margin: 40px 0 16px;
+    color: var(--cor-texto-fraco);
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+}
+
+.pagina-json h2:first-child {
+    margin-top: 0;
+}
+
+.pagina-json h3 {
+    margin: 22px 0 4px;
+    padding: 18px 22px 0;
+    border: 1px solid var(--cor-borda);
+    border-bottom: 0;
+    border-radius: var(--raio-lg) var(--raio-lg) 0 0;
+    background: #ffffff;
+    font-size: 19px;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+}
+
+.pagina-json h3 + p,
+.pagina-json h3 + p + p {
+    margin: 0;
+    padding: 2px 22px;
+    border-right: 1px solid var(--cor-borda);
+    border-left: 1px solid var(--cor-borda);
+    background: #ffffff;
+    color: var(--cor-texto-suave);
+    font-size: 15px;
+}
+
+/* Formulário de cadastro (primeiro form) e formulários de cada aluno */
+.pagina-json form {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    gap: 12px;
+}
+
+.pagina-json > h2:first-child + form {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    gap: 12px 16px;
+    padding: 28px;
+    border: 1px solid var(--cor-borda);
+    border-radius: var(--raio-lg);
+    background: #ffffff;
+    box-shadow: var(--sombra);
+}
+
+.pagina-json > h2:first-child + form button {
+    grid-column: 1 / -1;
+    margin-top: 4px;
+}
+
+/* Bloco do aluno: botão excluir + formulário de edição */
+.pagina-json h3 ~ form {
+    padding: 12px 22px;
+    border-right: 1px solid var(--cor-borda);
+    border-left: 1px solid var(--cor-borda);
+    background: #ffffff;
+}
+
+.pagina-json h3 + p + p + form {
+    padding-top: 14px;
+}
+
+.pagina-json h3 + p + p + form + form {
+    padding-bottom: 20px;
+    border-top: 1px dashed var(--cor-borda);
+    border-bottom: 1px solid var(--cor-borda);
+    border-radius: 0 0 var(--raio-lg) var(--raio-lg);
+    box-shadow: var(--sombra-sm);
+}
+
+.pagina-json label {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    color: #334155;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.pagina-json input:not([type="hidden"]) {
+    width: 100%;
+    min-height: 42px;
+    padding: 9px 12px;
+    border: 1px solid #cbd5e1;
+    border-radius: var(--raio-sm);
+    background: #ffffff;
+    color: var(--cor-texto);
+    font: inherit;
+    font-weight: 400;
+    transition: border-color var(--transicao), box-shadow var(--transicao);
+}
+
+.pagina-json label input:not([type="hidden"]) {
+    min-width: 140px;
+}
+
+.pagina-json input:hover {
+    border-color: #94a3b8;
+}
+
+.pagina-json input:focus {
+    outline: none;
+    border-color: var(--cor-primaria);
+    box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.15);
 }
 
 .pagina-json button {
-    min-height: 40px;
-    padding: 8px 14px;
-    border: 1px solid #2563eb;
-    border-radius: 7px;
-    background: #2563eb;
-    color: #fff;
+    min-height: 42px;
+    padding: 9px 18px;
+    border: 0;
+    border-radius: var(--raio-sm);
+    background: linear-gradient(135deg, #3b82f6, var(--cor-primaria-escura));
+    color: #ffffff;
     font: inherit;
-    font-weight: 700;
+    font-weight: 600;
     cursor: pointer;
-    transition: background-color 0.2s ease, transform 0.2s ease;
+    box-shadow: 0 6px 16px -6px rgba(37, 99, 235, 0.6);
+    transition: transform var(--transicao), box-shadow var(--transicao), filter var(--transicao), background-color var(--transicao);
 }
 
 .pagina-json button:hover {
     transform: translateY(-1px);
-    background: #1d4ed8;
+    filter: brightness(1.08);
+    box-shadow: 0 10px 22px -6px rgba(37, 99, 235, 0.65);
 }
 
-.pagina-json button:focus-visible {
-    outline: 3px solid #bfdbfe;
+.pagina-json button:active {
+    transform: translateY(1px) scale(0.98);
+}
+
+.pagina-json button[value="deletar"] {
+    border: 1px solid #fecaca;
+    background: #fef2f2;
+    color: #b91c1c;
+    box-shadow: none;
+}
+
+.pagina-json button[value="deletar"]:hover {
+    border-color: #dc2626;
+    background: #dc2626;
+    color: #ffffff;
+    filter: none;
+}
+
+.pagina-json button:focus-visible,
+.pagina-json input:focus-visible {
+    outline: 3px solid #60a5fa;
     outline-offset: 2px;
+}
+
+@media (max-width: 560px) {
+    .pagina-json > h2:first-child + form {
+        grid-template-columns: 1fr;
+        gap: 6px;
+        padding: 20px;
+    }
+
+    .pagina-json label {
+        flex: 1 1 100%;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        transition-duration: 0.01ms !important;
+    }
 }

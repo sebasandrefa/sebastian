@@ -1,134 +1,198 @@
-* {
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap");
+
+:root {
+    --cor-primaria: #2563eb;
+    --cor-primaria-escura: #1d4ed8;
+    --cor-primaria-clara: #eff6ff;
+    --cor-primaria-borda: #bfdbfe;
+    --cor-texto: #0f172a;
+    --cor-texto-suave: #475569;
+    --cor-texto-fraco: #64748b;
+    --cor-borda: #e2e8f0;
+    --cor-fundo: #f8fafc;
+    --raio-sm: 8px;
+    --raio: 12px;
+    --raio-lg: 20px;
+    --sombra-sm: 0 1px 2px rgba(15, 23, 42, 0.06), 0 1px 3px rgba(15, 23, 42, 0.08);
+    --sombra: 0 4px 6px -1px rgba(15, 23, 42, 0.06), 0 10px 24px -6px rgba(15, 23, 42, 0.10);
+    --transicao: 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+*,
+*::before,
+*::after {
     box-sizing: border-box;
 }
 
 ::selection {
-    color: #111827;
+    color: var(--cor-texto);
     background: #dbeafe;
 }
 
 body.pagina-poo2 {
     min-height: 100vh;
     margin: 0;
-    padding: 36px 20px;
+    padding: 48px 20px;
     display: flex;
     align-items: center;
     justify-content: center;
-    background: #f3f4f6;
-    color: #1f2937;
-    font-family: Arial, Helvetica, sans-serif;
+    background:
+        radial-gradient(circle at 85% 15%, rgba(96, 165, 250, 0.28), transparent 40%),
+        radial-gradient(circle at 10% 90%, rgba(37, 99, 235, 0.22), transparent 45%),
+        linear-gradient(135deg, #0b1120 0%, #111c3d 50%, #1e3a8a 100%);
+    background-attachment: fixed;
+    color: var(--cor-texto);
+    font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
     line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
 }
 
 .painel-producao {
-    width: min(100%, 820px);
+    width: min(100%, 840px);
     margin: 0 auto;
-    padding: clamp(22px, 4vw, 36px);
-    border: 1px solid #e5e7eb;
-    border-radius: 18px;
-    background: #fff;
-    box-shadow: 0 18px 48px rgba(17, 24, 39, 0.1);
+    padding: clamp(24px, 4vw, 40px);
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    border-radius: var(--raio-lg);
+    background: rgba(255, 255, 255, 0.98);
+    box-shadow: 0 30px 60px -15px rgba(2, 6, 23, 0.6);
+    animation: aparecer 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+@keyframes aparecer {
+    from { opacity: 0; transform: translateY(14px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
 .cabecalho-producao {
-    margin-bottom: 24px;
+    margin-bottom: 28px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid var(--cor-borda);
 }
 
 .etiqueta-projeto {
     display: inline-block;
-    color: #2563eb;
-    font-size: 12px;
+    padding: 4px 11px;
+    border: 1px solid #dbeafe;
+    border-radius: 999px;
+    background: var(--cor-primaria-clara);
+    color: var(--cor-primaria);
+    font-size: 11px;
     font-weight: 700;
     letter-spacing: 0.09em;
     text-transform: uppercase;
 }
 
 .cabecalho-producao h1 {
-    margin: 8px 0 6px;
-    color: #111827;
-    font-size: clamp(27px, 4vw, 34px);
+    margin: 14px 0 8px;
+    color: var(--cor-texto);
+    font-size: clamp(27px, 4vw, 36px);
+    font-weight: 800;
+    letter-spacing: -0.03em;
     line-height: 1.15;
 }
 
 .cabecalho-producao p {
     max-width: 620px;
     margin: 0;
-    color: #6b7280;
+    color: var(--cor-texto-fraco);
+    font-size: 16px;
 }
 
 .formulario-maquina {
     display: grid;
-    grid-template-columns: minmax(160px, 0.7fr) minmax(0, 1.3fr);
+    grid-template-columns: minmax(170px, 0.7fr) minmax(0, 1.3fr);
     align-items: center;
-    gap: 9px 16px;
-    padding: 20px;
-    border: 1px solid #e5e7eb;
-    border-radius: 14px;
-    background: #f9fafb;
+    gap: 12px 18px;
+    padding: 24px;
+    border: 1px solid var(--cor-borda);
+    border-radius: 16px;
+    background: var(--cor-fundo);
 }
 
 .formulario-maquina label {
-    color: #374151;
+    color: #334155;
     font-size: 14px;
-    font-weight: 700;
+    font-weight: 600;
 }
 
 .formulario-maquina input,
 .formulario-maquina select {
     width: 100%;
-    min-height: 40px;
-    padding: 8px 11px;
-    border: 1px solid #d1d5db;
-    border-radius: 8px;
-    background: #fff;
-    color: #1f2937;
+    min-height: 44px;
+    padding: 9px 12px;
+    border: 1px solid #cbd5e1;
+    border-radius: var(--raio-sm);
+    background-color: #ffffff;
+    color: var(--cor-texto);
     font: inherit;
-    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    transition: border-color var(--transicao), box-shadow var(--transicao);
+}
+
+.formulario-maquina select {
+    appearance: none;
+    -webkit-appearance: none;
+    padding-right: 36px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1.5l5 5 5-5' fill='none' stroke='%2364748b' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+    cursor: pointer;
+}
+
+.formulario-maquina input:hover,
+.formulario-maquina select:hover {
+    border-color: #94a3b8;
 }
 
 .formulario-maquina input:focus,
 .formulario-maquina select:focus {
-    border-color: #2563eb;
-    outline: 3px solid #bfdbfe;
+    outline: none;
+    border-color: var(--cor-primaria);
+    box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.15);
 }
 
 .formulario-maquina button {
     grid-column: 1 / -1;
-    min-height: 42px;
-    margin-top: 4px;
+    min-height: 46px;
+    margin-top: 6px;
     padding: 11px 18px;
-    border: 1px solid #2563eb;
-    border-radius: 8px;
-    background: #2563eb;
-    color: #fff;
+    border: 0;
+    border-radius: var(--raio-sm);
+    background: linear-gradient(135deg, #3b82f6, var(--cor-primaria-escura));
+    color: #ffffff;
     font: inherit;
-    font-weight: 700;
+    font-weight: 600;
     cursor: pointer;
-    transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0 6px 16px -6px rgba(37, 99, 235, 0.6);
+    transition: transform var(--transicao), box-shadow var(--transicao), filter var(--transicao);
 }
 
 .formulario-maquina button:hover {
     transform: translateY(-1px);
-    background: #1d4ed8;
-    box-shadow: 0 6px 14px rgba(37, 99, 235, 0.22);
+    filter: brightness(1.08);
+    box-shadow: 0 10px 22px -6px rgba(37, 99, 235, 0.65);
 }
 
 .formulario-maquina button:active {
-    transform: translateY(0);
+    transform: translateY(1px) scale(0.99);
 }
 
 .mensagem-maquina {
+    display: flex;
+    align-items: center;
+    gap: 10px;
     margin: 18px 0 0;
     padding: 12px 16px;
-    border: 1px solid #bfdbfe;
-    border-radius: 8px;
-    background: #eff6ff;
+    border: 1px solid var(--cor-primaria-borda);
+    border-left: 4px solid var(--cor-primaria);
+    border-radius: var(--raio-sm);
+    background: var(--cor-primaria-clara);
     color: #1e40af;
     font-weight: 600;
+    animation: aparecer 0.35s ease-out;
 }
 
 .secao-maquinas {
-    margin-top: 28px;
+    margin-top: 36px;
 }
 
 .titulo-lista {
@@ -136,61 +200,79 @@ body.pagina-poo2 {
     align-items: end;
     justify-content: space-between;
     gap: 16px;
-    margin-bottom: 16px;
+    margin-bottom: 18px;
 }
 
 .titulo-lista h2 {
-    margin: 3px 0 0;
-    color: #111827;
+    margin: 8px 0 0;
+    color: var(--cor-texto);
     font-size: 24px;
+    font-weight: 800;
+    letter-spacing: -0.02em;
 }
 
 .contador-maquinas {
-    padding: 6px 11px;
+    padding: 6px 14px;
     border-radius: 999px;
-    background: #eff6ff;
-    color: #1d4ed8;
+    background: linear-gradient(135deg, #3b82f6, var(--cor-primaria-escura));
+    color: #ffffff;
     font-size: 13px;
-    font-weight: 700;
+    font-weight: 600;
     white-space: nowrap;
+    box-shadow: 0 6px 14px -6px rgba(37, 99, 235, 0.6);
 }
 
 .lista-maquinas {
     display: grid;
-    gap: 12px;
+    gap: 10px;
     margin: 0;
     padding: 0;
     list-style: none;
+    counter-reset: maquina;
 }
 
 .lista-maquinas li {
     position: relative;
-    padding: 14px 18px 14px 48px;
-    border: 1px solid #e5e7eb;
-    border-radius: 11px;
-    background: #fff;
-    color: #4b5563;
-    box-shadow: 0 3px 10px rgba(17, 24, 39, 0.04);
+    padding: 15px 18px 15px 62px;
+    border: 1px solid var(--cor-borda);
+    border-radius: var(--raio);
+    background: #ffffff;
+    color: var(--cor-texto-suave);
+    box-shadow: var(--sombra-sm);
+    counter-increment: maquina;
+    transition: transform var(--transicao), border-color var(--transicao), box-shadow var(--transicao);
+}
+
+.lista-maquinas li:hover {
+    transform: translateX(3px);
+    border-color: var(--cor-primaria-borda);
+    box-shadow: var(--sombra);
 }
 
 .lista-maquinas li::before {
     position: absolute;
     top: 50%;
-    left: 19px;
-    width: 18px;
-    height: 18px;
-    border-radius: 6px;
-    background: #dbeafe;
-    content: "";
+    left: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 9px;
+    background: var(--cor-primaria-clara);
+    color: var(--cor-primaria);
+    content: counter(maquina, decimal-leading-zero);
+    font-size: 12px;
+    font-weight: 700;
     transform: translateY(-50%);
 }
 
 .lista-maquinas:empty::after {
     display: block;
-    padding: 22px;
-    border: 1px dashed #d1d5db;
-    border-radius: 11px;
-    color: #6b7280;
+    padding: 26px;
+    border: 1px dashed #cbd5e1;
+    border-radius: var(--raio);
+    color: var(--cor-texto-fraco);
     content: "Nenhuma máquina cadastrada ainda. Use o formulário acima para começar.";
     text-align: center;
 }
@@ -198,21 +280,25 @@ body.pagina-poo2 {
 .voltar-inicio {
     display: inline-flex;
     align-items: center;
-    margin-top: 22px;
-    padding: 10px 15px;
-    border: 1px solid #dbeafe;
-    border-radius: 8px;
-    background: #eff6ff;
-    color: #1d4ed8;
-    font-weight: 700;
+    margin-top: 28px;
+    padding: 10px 18px;
+    border: 1px solid var(--cor-borda);
+    border-radius: 999px;
+    background: #ffffff;
+    color: var(--cor-texto-suave);
+    font-size: 14px;
+    font-weight: 600;
     text-decoration: none;
-    transition: background-color 0.2s ease, transform 0.2s ease;
+    box-shadow: var(--sombra-sm);
+    transition: color var(--transicao), border-color var(--transicao), transform var(--transicao), box-shadow var(--transicao);
 }
 
 .voltar-inicio:hover,
 .voltar-inicio:focus-visible {
+    border-color: var(--cor-primaria-borda);
+    color: var(--cor-primaria-escura);
     transform: translateY(-1px);
-    background: #dbeafe;
+    box-shadow: var(--sombra);
 }
 
 :where(a, button, input, select):focus-visible {
@@ -222,27 +308,27 @@ body.pagina-poo2 {
 
 @media (max-width: 600px) {
     body.pagina-poo2 {
-        padding: 22px 12px;
+        padding: 20px 12px;
     }
 
     .painel-producao {
         padding: 24px 18px;
-        border-radius: 14px;
+        border-radius: 16px;
     }
 
     .formulario-maquina {
         grid-template-columns: 1fr;
-        gap: 7px;
+        gap: 6px;
         padding: 18px;
     }
 
     .formulario-maquina label:not(:first-child) {
-        margin-top: 8px;
+        margin-top: 10px;
     }
 
     .formulario-maquina button {
         grid-column: 1;
-        margin-top: 10px;
+        margin-top: 14px;
     }
 
     .titulo-lista {
