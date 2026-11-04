@@ -1,0 +1,159 @@
+<?php
+// ==========================================
+// SISTEMA DE CONTROLE DE PRODUÇÃO INDUSTRIAL
+// ==========================================
+
+    // 1. CLASSE ABSTRATA
+abstract class Maquina {
+    public $nome;
+    private $producao;
+
+    public function __construct($nome){
+        $this->nome = $nome;
+        $this->producao = 0;
+    }
+
+    public function getProducao(){
+        return $this->producao;
+    }
+
+    public function registrarProducao($quantidade){
+        if ($quantidade <= 0){
+            return false;
+        }
+
+        $this->producao += $quantidade;
+        return true;
+    }
+
+    // ABSTRAÇÃO
+    abstract public function operar();
+}
+
+    // 2. HERANÇA
+class Esteira extends Maquina {
+    public function operar(){
+        return "Transportando peças...";
+    }
+}
+
+class Prensa extends Maquina {
+    public function operar(){
+        return "Prensando peças...";
+    }
+}
+
+class RoboSoldagem extends Maquina {
+    public function operar(){
+        return "Soldando peças...";
+    }
+}
+
+    // 3. SESSÃO = ARMAZENAMENTO TEMPORÁRIO
+    if (!isset($_SESSION["máquinas"])){
+        $_SESSION["máquinas"] = [];
+}
+
+$mensagem = "";
+
+    // 4. RECEBER FORMULÁRIO VIA POST
+if ($_SERVER["REQUEST_METHOD"] === "POST"){
+    $nome = $_POST["nome"] ?? "";
+    $tipo = $_POST["tipo"] ?? "";
+    $quantidade = $_POST["quantidade"] ?? null;
+
+    if(
+        $nome === "" ||
+        $quantidade === false ||
+        $quantidade <= 0
+    ){
+        $mensagem = "Por favor, preencha todos os campos corretamente!";
+    } else {
+    // 5. CRIAR OBJETOS COM BSE NO FORMULÁRIO
+    if ($tipo === "esteira") {
+        $maquina = new Esteira($nome);
+        } 
+        
+    elseif ($tipo === "prensa") {
+        $maquina = new Prensa($nome);
+        } 
+
+    elseif ($tipo === "robosaldagem") {
+        $maquina = new RoboSoldagem($nome);
+        } 
+        
+    // EXECUTANDO OS METODOS DO OBJETO
+    $maquina->registrarProducao($quantidade);
+
+    // GUARDANDO O OBJETO NA SESSÃO
+    $_SESSION["máquinas"][] = $maquina;
+
+    $mensagem = "Máquina cadastrada com sucesso!";
+    }
+}
+
+    // EVITAR INTERPRETAR TEXTOS COMO HTML
+    function escapar($texto) {
+        return htmlspecialchars((string) $texto, ENT_QUOTES, "UTF-8");
+    }
+    ?>
+    <!DOCTYPE html>
+    <html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/resources/css/poo2.css?v=1">
+        <title>Produção Industrial</title>
+    </head>
+    <body class="pagina-poo2">
+        <main class="painel-producao">
+        <header class="cabecalho-producao">
+            <span class="etiqueta-projeto">Projeto 06 · Programação Orientada a Objetos</span>
+        <h1>Controle de Produção Industrial</h1>
+            <p>Cadastre máquinas e acompanhe a produção registrada em cada equipamento.</p>
+        </header>
+
+        <form method="POST" class="formulario-maquina">
+            <label for="nome">Nome da Máquina:</label>
+            <input type="text" name="nome" id="nome" required>
+
+            <label for="tipo">Tipo de Máquina:</label>
+            <select name="tipo" id="tipo" required>
+                <option value="">Selecione</option>
+                <option value="esteira">Esteira</option>
+                <option value="prensa">Prensa</option>
+                <option value="robosaldagem">Robô de Soldagem</option>
+            </select>
+
+            <label for="quantidade">Quantidade Produzida:</label>
+            <input type="number" name="quantidade" id="quantidade" min="1" required>
+
+            <button type="submit">Cadastrar Máquina</button>
+            </form>
+
+            <?php if ($mensagem): ?>
+            <p class="mensagem-maquina" role="status"><?php echo escapar($mensagem); ?></p>
+            <?php endif; ?>
+
+        <section class="secao-maquinas" aria-labelledby="titulo-maquinas">
+            <div class="titulo-lista">
+                <div>
+                    <span class="etiqueta-projeto">Painel de produção</span>
+                    <h2 id="titulo-maquinas">Máquinas cadastradas</h2>
+                </div>
+                <span class="contador-maquinas"><?php echo count($_SESSION["máquinas"]); ?> cadastrada(s)</span>
+            </div>
+            <ul class="lista-maquinas">
+                
+            <?php foreach ($_SESSION["máquinas"] as $maquina): ?>
+                <li>
+                    <?php echo escapar($maquina->nome); ?> - 
+                    <?php echo escapar($maquina->operar()); ?> - 
+                    Produção: <?php echo escapar($maquina->getProducao()); ?>
+                </li>
+            <?php endforeach; ?>
+        </ul>
+        </section>
+        <a class="voltar-inicio" href="/?rota=portfolio">← Voltar ao portfólio</a>
+        </main>
+
