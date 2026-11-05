@@ -4,7 +4,7 @@ namespace App\Models;
 class Chamado{
 
 public function LerChamados() {
-        $arquivo = storage_path('app/Chamados.json');
+        $arquivo = storage_path('app/chamados.json');
 
         if(!file_exists($arquivo)){
             file_put_contents($arquivo, "[]");
