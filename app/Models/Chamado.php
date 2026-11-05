@@ -1,10 +1,10 @@
 <?php 
 
+namespace App\Models;
 class Chamado{
 
 public function LerChamados() {
-    
-        $arquivo = __DIR__ . "/../dados/chamados.json";
+        $arquivo = storage_path('app/Chamados.json');
 
         if(!file_exists($arquivo)){
             file_put_contents($arquivo, "[]");

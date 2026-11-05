@@ -3,8 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="resources/css/index.css">
-    <title>Home</title>
+    
+    <title>Meu Portfolio</title>
+
+    @vite(['resources/css/index.css'])
+
 </head>
 <body class="pagina-inicio">
     <!-- =====================
@@ -114,7 +117,7 @@
                         <span>CSS</span>
                         <span>PHP</span>
                     </div>
-                    <a href="/?rota=idade" class="link-projeto">
+                    <a href="{{ route('Helpdesk') }}" class="link-projeto">
                         Ver projeto →
                     </a>
                 </div>
