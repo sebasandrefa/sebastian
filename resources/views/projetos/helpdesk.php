@@ -1,48 +1,4 @@
 <?php
-require_once __DIR__ . '/../../../app/Models/Chamado.php';
-
-$modeloChamado = new Chamado();
-
-$mensagem = "";
-
-if ($_SERVER["REQUEST_METHOD"] === "POST") {
-    $acao = $_POST["acao"] ?? "";
-
-   if ($acao === "cadastrar") {
-        $sucesso = $modeloChamado->cadastrarChamados(
-            $_POST["nome"] ?? "",
-            $_POST["setor"] ?? "",
-            $_POST["equipamento"] ?? "",
-            $_POST["descricao"] ?? "",
-            $_POST["prioridade"] ?? ""
-        );
-
-        $mensagem = $sucesso ? "Chamado cadastrado com sucesso!" : "Erro ao cadastrar. Verifique os dados.";
-    }
-
-    if ($acao === "atualizar") {
-        $sucesso = $modeloChamado->atualizarChamado(
-            (int) ($_POST["posicao"] ?? -1),
-            $_POST["status"] ?? ""
-        );
-
-        $mensagem = $sucesso ? "Status atualizado!" : "Não foi possível atualizar.";
-    }
-
-    if ($acao === "excluir") {
-        $sucesso = $modeloChamado->excluirChamado(
-            (int) ($_POST["posicao"] ?? -1)
-        );
-
-        $mensagem = $sucesso
-            ? "Chamado excluído!"
-            : "Não foi possível excluir.";
-    }
-}
-
-$chamados = $modeloChamado->LerChamados();
-$relatorio = $modeloChamado->gerarRelatorio();
-
 function escapar($valor) {
     return htmlspecialchars((string) $valor, ENT_QUOTES, "UTF-8");
 }
@@ -53,7 +9,7 @@ function escapar($valor) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/resources/css/helpdesk.css?v=2">
+    <link rel="stylesheet" href="<?= \Illuminate\Support\Facades\Vite::asset('resources/css/helpdesk.css') ?>">
     <title>Chamados</title>
 </head>
 <body>
@@ -90,6 +46,7 @@ function escapar($valor) {
             <option value="alta">Alta</option>
         </select>
 
+        <?= csrf_field() ?>
         <input type="hidden" name="acao" value="cadastrar">
 
         <button type="submit">Enviar</button>
@@ -112,6 +69,7 @@ function escapar($valor) {
                     
                     <td>
                         <form method="POST">
+                            <?= csrf_field() ?>
                             <input type="hidden" name="acao" value="atualizar">
                             <input type="hidden" name="posicao" value="<?php echo $posicao; ?>">
                             
@@ -126,6 +84,7 @@ function escapar($valor) {
 
                     <td>
                         <form method="POST">
+                            <?= csrf_field() ?>
                             <input type="hidden" name="acao" value="excluir">
                             <input type="hidden" name="posicao" value="<?php echo $posicao; ?>">
                             <button type="submit">Excluir</button>

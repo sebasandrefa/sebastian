@@ -17,7 +17,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     if ($usuario === "sebasandrefa" && $senha === "300609") {
         session_regenerate_id(true);
         $_SESSION["jogos_logado"] = true;
-        header("Location: /?rota=jogos");
+        header("Location: /jogos");
         exit;
     }
 
@@ -29,13 +29,14 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/resources/css/login-jogos.css?v=2">
+    <link rel="stylesheet" href="<?= \Illuminate\Support\Facades\Vite::asset('resources/css/login-jogos.css') ?>">
     <title>Login para jogos</title>
 </head>
 <body class="pagina-login-jogos">
     <main class="caixa-login-jogos">
         <h1>Login</h1>
         <form method="post">
+            <?= csrf_field() ?>
             <label for="usuario">Usuário:</label>
             <input id="usuario" type="text" name="usuario" required>
 

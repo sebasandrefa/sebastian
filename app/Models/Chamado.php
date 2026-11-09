@@ -18,7 +18,7 @@ public function LerChamados() {
     }
 
     public function salvarChamados($chamados) {
-        $arquivo = __DIR__ . "/../dados/chamados.json";
+        $arquivo = storage_path('app/chamados.json');
 
         return file_put_contents(
             $arquivo, json_encode(

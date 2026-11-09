@@ -57,13 +57,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["nome"])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/resources/css/notas.css?v=2">
+    <link rel="stylesheet" href="<?= \Illuminate\Support\Facades\Vite::asset('resources/css/notas.css') ?>">
     <title>Notas</title>
 </head>
 <body class="pagina-notas">
     <h1>Cadastro de aluno</h1>
 
     <form method="POST" class="formulario-notas">
+        <?= csrf_field() ?>
         <input type="text" name="nome" placeholder="Digite seu nome" required>
         <input type="number" name="idade" placeholder="Digite sua idade" required>
         <input type="number" name="nota1" min="0" max="10" placeholder="Nota 1" step="0.1" required>

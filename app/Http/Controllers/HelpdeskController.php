@@ -18,7 +18,7 @@ class HelpdeskController extends Controller
  
         $mensagem = "";
  
-        return view('projetos.Helpdesk', compact('model','chamados','relatorio','mensagem'));
+        return view('projetos.helpdesk', compact('model','chamados','relatorio','mensagem'));
     }
  
     // POST - Receber os formulários do Helpdesk
@@ -61,7 +61,7 @@ class HelpdeskController extends Controller
         $chamados = $model->lerChamados();
         $relatorio = $model->gerarRelatorio();
 
-        return view('projetos.Helpdesk', compact('model','chamados','relatorio','mensagem'));
+        return view('projetos.helpdesk', compact('model','chamados','relatorio','mensagem'));
 
     }
 }

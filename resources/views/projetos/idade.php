@@ -16,7 +16,7 @@ if ($_SERVER ["REQUEST_METHOD"] == "POST"){
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/resources/css/idade.css?v=2">
+    <link rel="stylesheet" href="<?= \Illuminate\Support\Facades\Vite::asset('resources/css/idade.css') ?>">
     
     <title>Verificador de idade</title>
 </head>
@@ -24,6 +24,7 @@ if ($_SERVER ["REQUEST_METHOD"] == "POST"){
 <h1>Verificador de idade</h1>
 
 <form method="POST" class="formulario-idade">
+    <?= csrf_field() ?>
     <label for="nome">Seu nome</label>
     <input type="text" id="nome" name="nome" maxlength="100" placeholder="Digite seu nome" required>
     <label for="idade">Sua idade</label>

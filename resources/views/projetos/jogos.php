@@ -2,7 +2,7 @@
 session_start();
 
 if (empty($_SESSION["jogos_logado"])) {
-    header("Location: /?rota=login-jogos");
+    header("Location: /login-jogos");
     exit;
 }
 
@@ -11,7 +11,7 @@ $erro = "";
 $jogos = [];
 
 try {
-    require __DIR__ . "/../conexao.php";
+    require __DIR__ . "/../../../config/conexao.php";
 
     $pdo->exec("CREATE TABLE IF NOT EXISTS jogos (
         id INT AUTO_INCREMENT PRIMARY KEY,
@@ -42,13 +42,14 @@ try {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/resources/css/index.css">
+    <link rel="stylesheet" href="<?= \Illuminate\Support\Facades\Vite::asset('resources/css/index.css') ?>">
     <title>Cadastro de Jogos</title>
 </head>
 <body class="pagina-jogos">
     <h1>Cadastrar jogo</h1>
 
     <form method="post" class="formulario-jogos">
+        <?= csrf_field() ?>
         <input type="text" name="nome" maxlength="100" placeholder="Nome do jogo" required>
         <input type="text" name="genero" maxlength="50" placeholder="Gênero" required>
         <input type="number" name="nota" min="0" max="10" placeholder="Nota" required>
@@ -97,7 +98,7 @@ try {
 
     <p class="acoes-jogos">
         <a class="voltar-inicio" href="/?rota=portfolio">← Voltar ao início</a>
-        <a class="voltar-inicio" href="/?rota=login-jogos&amp;sair=1">Sair</a>
+        <a class="voltar-inicio" href="/login-jogos?sair=1">Sair</a>
     </p>
 
 
