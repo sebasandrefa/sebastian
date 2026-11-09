@@ -10,3 +10,4 @@ Route::get('/', function () {
 Route::get('/helpdesk', [HelpdeskController::class,'index'])->name('helpdesk');
 
 Route::post('/helpdesk', [HelpdeskController::class,'salvar'])->name('helpdesk.salvar');
+

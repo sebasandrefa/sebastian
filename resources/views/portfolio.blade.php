@@ -117,7 +117,7 @@
                         <span>CSS</span>
                         <span>PHP</span>
                     </div>
-                    <a href="" class="link-projeto">
+                    <a href="{{ route('Idade') }}" class="link-projeto">
                         Ver projeto →
                     </a>
                 </div>
